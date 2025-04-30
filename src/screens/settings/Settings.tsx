@@ -1,9 +1,12 @@
 import {View, Text} from 'react-native';
 import React from 'react';
+import {styles} from './settings.style';
+import CustomStatusBar from '../../components/CustomStatusBar';
 
 const Settings = () => {
   return (
-    <View>
+    <View style={styles.container}>
+      <CustomStatusBar />
       <Text>Settings</Text>
     </View>
   );

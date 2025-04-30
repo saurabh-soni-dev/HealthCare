@@ -1,5 +1,12 @@
 import React, {FC} from 'react';
-import {Image, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import iconName from '../../utility/iconName.json';
 
@@ -19,7 +26,7 @@ interface PatientCardProps {
 
 const PatientCard: FC<PatientCardProps> = ({item, onPress, onPressEdit}) => {
   return (
-    <TouchableHighlight style={styles.cardContainer} onPress={onPress}>
+    <TouchableOpacity style={styles.cardContainer} onPress={onPress}>
       <View style={styles.imageWrapper}>
         <Image
           source={{uri: item.image}}
@@ -52,7 +59,7 @@ const PatientCard: FC<PatientCardProps> = ({item, onPress, onPressEdit}) => {
         style={styles.editButton}>
         <Icon name={iconName.edit} size={20} color="#111111" />
       </TouchableHighlight>
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 };
 
