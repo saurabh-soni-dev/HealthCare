@@ -13,12 +13,13 @@ interface Patient {
 
 interface PatientCardProps {
   item: Patient;
+  onPress: () => void;
   onPressEdit?: () => void;
 }
 
-const PatientCard: FC<PatientCardProps> = ({item, onPressEdit}) => {
+const PatientCard: FC<PatientCardProps> = ({item, onPress, onPressEdit}) => {
   return (
-    <View style={styles.cardContainer}>
+    <TouchableHighlight style={styles.cardContainer} onPress={onPress}>
       <View style={styles.imageWrapper}>
         <Image
           source={{uri: item.image}}
@@ -51,7 +52,7 @@ const PatientCard: FC<PatientCardProps> = ({item, onPressEdit}) => {
         style={styles.editButton}>
         <Icon name={iconName.edit} size={20} color="#111111" />
       </TouchableHighlight>
-    </View>
+    </TouchableHighlight>
   );
 };
 

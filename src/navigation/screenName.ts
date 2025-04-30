@@ -4,4 +4,6 @@ export default {
   patientsDetails: 'PatientsDetails',
   settings: 'Settings',
   analysis: 'Analysis',
+  notification: 'Notification',
+  addPatients: 'AddPatients',
 };

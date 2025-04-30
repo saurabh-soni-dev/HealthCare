@@ -10,7 +10,13 @@ import {styles} from './home.style';
 import useHome from './useHome';
 
 const Home: FC = () => {
-  const {patientList, onPressEdit} = useHome();
+  const {
+    patientList,
+    onPressEdit,
+    navigateToNotificationScreen,
+    navigateToAddPatientsScreen,
+    navigateToPatientsScreen,
+  } = useHome();
 
   return (
     <View style={styles.screenContainer}>
@@ -24,7 +30,7 @@ const Home: FC = () => {
           />
           <IconButon
             iconName={iconName.notification}
-            onPress={() => console.log('Notification')}
+            onPress={navigateToNotificationScreen}
           />
         </View>
         <View style={styles.patientListSection}>
@@ -41,16 +47,18 @@ const Home: FC = () => {
               />
               <IconButon
                 iconName={iconName.plus}
-                onPress={() => console.log('plus')}
+                onPress={navigateToAddPatientsScreen}
               />
             </View>
           </View>
           <FlatList
             data={patientList}
             keyExtractor={(_, index) => `${index}`}
-            renderItem={({item}) => (
+            renderItem={({item, index}) => (
               <PatientCard
+                key={index}
                 item={item}
+                onPress={navigateToPatientsScreen}
                 onPressEdit={() => onPressEdit(item.name)}
               />
             )}
