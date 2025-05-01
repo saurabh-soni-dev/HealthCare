@@ -2,6 +2,10 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/fonts/Neonderthaw-Regular.ttf",
+      "sha1": "dda8ceee641de7de57f937ad74d4b852f56910d5"
+    },
+    {
       "path": "src/assets/fonts/OpenSans-Bold.ttf",
       "sha1": "953814da1b753763dfa5a7ecc18bdbb14890e16b"
     },

@@ -23,6 +23,7 @@
 		E3F9F3456C1044FEBA9F7E48 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D55BE6AA7D246F5998018FA /* OpenSans-ExtraBoldItalic.ttf */; };
 		E76AA2FFC3724CE6BF5B0752 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FAD11CD48CA4BBDA72D7F54 /* OpenSans-Medium.ttf */; };
 		ECD35B21A47B4481A52A1410 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C647E8D0A6346399C8E0A5C /* OpenSans-LightItalic.ttf */; };
+		EFD1B37003B74CAE80FFB226 /* Neonderthaw-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 615D724704264484973D06B5 /* Neonderthaw-Regular.ttf */; };
 		FC134E0D4B1D4862970071B4 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DB1269DEFEE4FA292E91F48 /* OpenSans-Light.ttf */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		4D300939C62943B991CEBEE4 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Italic.ttf"; path = "../src/assets/fonts/OpenSans-Italic.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-HealthCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthCare.release.xcconfig"; path = "Target Support Files/Pods-HealthCare/Pods-HealthCare.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-HealthCare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HealthCare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		615D724704264484973D06B5 /* Neonderthaw-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Neonderthaw-Regular.ttf"; path = "../src/assets/fonts/Neonderthaw-Regular.ttf"; sourceTree = "<group>"; };
 		6DB1269DEFEE4FA292E91F48 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../src/assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = HealthCare/AppDelegate.swift; sourceTree = "<group>"; };
 		7D55BE6AA7D246F5998018FA /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../src/assets/fonts/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				F80844E48D6B44EBBBAB6623 /* OpenSans-Regular.ttf */,
 				15C0038C6382422892AC79A2 /* OpenSans-SemiBold.ttf */,
 				B3984973D3C34DE4BE66C1F5 /* OpenSans-SemiBoldItalic.ttf */,
+				615D724704264484973D06B5 /* Neonderthaw-Regular.ttf */,
 			);
 			name = Resources;
 			path = "";
@@ -218,6 +221,7 @@
 				45A074287DCD4510A727D9F6 /* OpenSans-Regular.ttf in Resources */,
 				74D919591EC243E5836D7DB5 /* OpenSans-SemiBold.ttf in Resources */,
 				817D9B65912C4DCC8265B586 /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				EFD1B37003B74CAE80FFB226 /* Neonderthaw-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,20 +1,17 @@
-import {useEffect} from 'react';
 import {useAuthNavigation} from '../../hooks/useAppNavigation';
 import {useSettingsContext} from '../../i18n/SettingsContext';
-import {createStyles} from './splash.style';
+import {createStyles} from './patientsDetails.style';
 
-const useSplash = () => {
+const usePatientsDetails = () => {
   const navigation = useAuthNavigation();
   const {theme} = useSettingsContext();
   const {colors} = theme;
   const styles = createStyles(colors);
 
-  useEffect(() => {
-    setTimeout(() => {
-      navigation.navigate('Home');
-    }, 2000);
-  });
-
-  return {styles};
+  const onPressBackIcon = () => {
+    navigation.goBack();
+  };
+  return {styles, onPressBackIcon};
 };
-export default useSplash;
+
+export default usePatientsDetails;

@@ -60,7 +60,7 @@ export const createStyles = (colors: any) => ({
   } as TextStyle,
 
   darkTheme: {
-    paddingVertical: 30,
+    paddingVertical: 50,
     paddingHorizontal: 20,
     flexDirection: 'row',
     alignItems: 'center',

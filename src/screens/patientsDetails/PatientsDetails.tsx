@@ -1,10 +1,20 @@
-import {View, Text} from 'react-native';
-import React from 'react';
+import {View} from 'react-native';
+import React, {FC} from 'react';
+import usePatientsDetails from './usePatientsDetails';
+import CustomStatusBar from '../../components/CustomStatusBar';
+import CustomHeader from '../../components/CustomHeader';
 
-const PatientsDetails = () => {
+const PatientsDetails: FC = () => {
+  const {styles, onPressBackIcon} = usePatientsDetails();
+
   return (
-    <View>
-      <Text>PatientsDetails</Text>
+    <View style={styles.container}>
+      <CustomStatusBar />
+      <CustomHeader
+        title="Title header"
+        subTitle="Sub title"
+        onBack={onPressBackIcon}
+      />
     </View>
   );
 };

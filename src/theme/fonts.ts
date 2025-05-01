@@ -11,4 +11,5 @@ export default {
   openSansRegular: 'OpenSans-Regular',
   openSansSemiBold: 'OpenSans-SemiBold',
   openSansSemiBoldItalic: 'OpenSans-SemiBoldItalic',
+  neonDerthawRegular: 'Neonderthaw-Regular',
 };

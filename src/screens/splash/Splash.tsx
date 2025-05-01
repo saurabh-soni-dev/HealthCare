@@ -1,13 +1,15 @@
 import {View} from 'react-native';
 import React, {FC} from 'react';
-import {styles} from './splash.style';
 import CustomText from '../../components/CustomText';
 import useSplash from './useSplash';
+import CustomStatusBar from '../../components/CustomStatusBar';
 
 const Splash: FC = () => {
-  const {} = useSplash();
+  const {styles} = useSplash();
+
   return (
     <View style={styles.container}>
+      <CustomStatusBar />
       <CustomText text="HealthCare" style={styles.textStyle} />
     </View>
   );

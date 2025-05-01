@@ -1,10 +1,19 @@
-import {View, Text} from 'react-native';
 import React, {FC} from 'react';
+import {View} from 'react-native';
+import CustomHeader from '../../components/CustomHeader';
+import CustomStatusBar from '../../components/CustomStatusBar';
+import useNotification from './useNotification';
 
 const Notification: FC = () => {
+  const {styles, onPressBackIcon} = useNotification();
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Notification</Text>
+    <View style={styles.container}>
+      <CustomStatusBar />
+      <CustomHeader
+        title="Notification"
+        subTitle="You have 10 new notification"
+        onBack={onPressBackIcon}
+      />
     </View>
   );
 };
