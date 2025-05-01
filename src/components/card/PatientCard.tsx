@@ -53,10 +53,10 @@ const PatientCard: FC<PatientCardProps> = ({item, onPress, onPressEdit}) => {
 
         <View style={styles.infoRow}>
           <Text allowFontScaling={false} style={styles.infoText}>
-            {item.gender}
+            {item.gender},
           </Text>
           <Text allowFontScaling={false} style={styles.infoText}>
-            {item.age}
+            {item.age} Yrs
           </Text>
         </View>
       </View>

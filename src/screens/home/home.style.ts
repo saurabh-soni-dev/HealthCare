@@ -18,7 +18,7 @@ export const createStyles = (colors: any) => ({
 
   userNameText: {
     flex: 1,
-    fontSize: 22,
+    fontSize: 24,
     color: colors.text,
     fontFamily: fonts.openSansSemiBold,
   } as TextStyle,
