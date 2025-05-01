@@ -1,11 +1,11 @@
-import {StyleSheet} from 'react-native';
+import {ViewStyle} from 'react-native';
 
-export const styles = StyleSheet.create({
+export const createStyles = (colors: any) => ({
   tabBar: {
     height: 70,
     position: 'absolute',
     flexDirection: 'row',
-    backgroundColor: '#111111',
+    backgroundColor: colors.text,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
@@ -13,17 +13,15 @@ export const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 100,
     gap: 4,
-  },
+  } as ViewStyle,
   button: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#F5F5F5',
-    // width: 60,
-    // height: 60,
+    backgroundColor: colors.background,
     padding: 18,
     borderRadius: 100,
-  },
+  } as ViewStyle,
   focusedButton: {
     backgroundColor: '#F59E0B',
-  },
+  } as ViewStyle,
 });

@@ -1,5 +1,7 @@
 import {patients} from './home.const';
 import {useAuthNavigation} from '../../hooks/useAppNavigation';
+import {useSettingsContext} from '../../i18n/SettingsContext';
+import {createStyles} from './home.style';
 
 // Define the structure of a patient object
 interface Patient {
@@ -10,6 +12,10 @@ interface Patient {
 }
 
 const useHome = () => {
+  const {theme} = useSettingsContext();
+  const {colors} = theme;
+  const styles = createStyles(colors);
+
   const navigation = useAuthNavigation();
   const patientList: Patient[] = patients;
 
@@ -38,6 +44,7 @@ const useHome = () => {
   // function end: navigateToPatientsScreen
 
   return {
+    styles,
     patientList,
     onPressEdit,
     navigateToNotificationScreen,

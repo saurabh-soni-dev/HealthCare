@@ -6,11 +6,11 @@ import CustomText from '../../components/CustomText';
 import IconButon from '../../components/IconButon';
 import iconName from '../../utility/iconName.json';
 import info from '../../utility/userInfo.json';
-import {styles} from './home.style';
 import useHome from './useHome';
 
 const Home: FC = () => {
   const {
+    styles,
     patientList,
     onPressEdit,
     navigateToNotificationScreen,

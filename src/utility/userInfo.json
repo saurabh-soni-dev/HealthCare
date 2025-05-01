@@ -1,4 +1,7 @@
 {
     "name":"Dr. Cameron \nWilliamson",
-    "yourPatients":"Your Patients"
+    "userImage": "https://randomuser.me/api/portraits/men/4.jpg",
+    "userName":"Dr. Cameron",
+    "yourPatients":"Your Patients",
+    "address":"Fort Lauderdalefl, FL, USA"
 }

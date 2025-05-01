@@ -1,5 +1,6 @@
-import {StyleSheet, Text, TextStyle} from 'react-native';
+import {Text, TextStyle} from 'react-native';
 import React, {FC} from 'react';
+import {useSettingsContext} from '../i18n/SettingsContext';
 
 interface CustomTextProps {
   text: string;
@@ -9,13 +10,14 @@ interface CustomTextProps {
 }
 const CustomText: FC<CustomTextProps> = ({
   text,
-  style = styles.textStyle,
+  style,
   allowFontScaling = false,
   numberOfLines = 1,
 }) => {
+  const {theme} = useSettingsContext();
   return (
     <Text
-      style={style}
+      style={{color: theme.colors.text, ...style}}
       allowFontScaling={allowFontScaling}
       numberOfLines={numberOfLines}>
       {text}
@@ -24,10 +26,3 @@ const CustomText: FC<CustomTextProps> = ({
 };
 
 export default CustomText;
-
-const styles = StyleSheet.create({
-  textStyle: {
-    fontSize: 14,
-    color: '#000000',
-  },
-});

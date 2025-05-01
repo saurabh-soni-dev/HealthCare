@@ -6,12 +6,13 @@ import {PlatformPressable} from '@react-navigation/elements';
 import {useLinkBuilder} from '@react-navigation/native';
 import React from 'react';
 import {View} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {useSettingsContext} from '../../i18n/SettingsContext';
 import Analysis from '../../screens/analysis/Analysis';
 import Home from '../../screens/home/Home';
 import Settings from '../../screens/settings/Settings';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {styles} from './homeTabs.style';
 import iconName from '../../utility/iconName.json';
+import {createStyles} from './homeTabs.style';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,6 +24,9 @@ const screens = [
 
 function MyTabBar({state, navigation}: BottomTabBarProps) {
   const {buildHref} = useLinkBuilder();
+  const {theme} = useSettingsContext();
+  const {colors} = theme;
+  const styles = createStyles(colors);
 
   return (
     <View style={styles.tabBar}>
@@ -61,7 +65,7 @@ function MyTabBar({state, navigation}: BottomTabBarProps) {
             onPress={onPress}
             href={buildHref(route.name)}
             style={[styles.button, isFocused && styles.focusedButton]}>
-            <Icon name={icon} size={24} color={'#111111'} />
+            <Icon name={icon} size={24} color={colors.text} />
           </PlatformPressable>
         );
       })}

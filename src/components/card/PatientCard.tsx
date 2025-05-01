@@ -1,14 +1,17 @@
 import React, {FC} from 'react';
 import {
   Image,
-  StyleSheet,
+  ImageStyle,
   Text,
+  TextStyle,
   TouchableHighlight,
   TouchableOpacity,
   View,
+  ViewStyle,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import iconName from '../../utility/iconName.json';
+import {useSettingsContext} from '../../i18n/SettingsContext';
 
 // Patient type definition
 interface Patient {
@@ -25,6 +28,10 @@ interface PatientCardProps {
 }
 
 const PatientCard: FC<PatientCardProps> = ({item, onPress, onPressEdit}) => {
+  const {theme} = useSettingsContext();
+  const {colors} = theme;
+  const styles = createStyles(colors);
+
   return (
     <TouchableOpacity style={styles.cardContainer} onPress={onPress}>
       <View style={styles.imageWrapper}>
@@ -57,58 +64,66 @@ const PatientCard: FC<PatientCardProps> = ({item, onPress, onPressEdit}) => {
         onPress={onPressEdit}
         underlayColor="#D1D5DB"
         style={styles.editButton}>
-        <Icon name={iconName.edit} size={20} color="#111111" />
+        <Icon name={iconName.edit} size={20} color={colors.card} />
       </TouchableHighlight>
     </TouchableOpacity>
   );
 };
 
 export default PatientCard;
-const styles = StyleSheet.create({
+
+const createStyles = (colors: any) => ({
   cardContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-  },
+  } as ViewStyle,
+
   imageWrapper: {
     height: 60,
     width: 60,
-    backgroundColor: '#E5E7EB',
+    backgroundColor: colors.background,
     borderRadius: 100,
     marginRight: 12,
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  } as ViewStyle,
+
   profileImage: {
     height: 60,
     width: 60,
     borderRadius: 30,
-  },
+  } as ImageStyle,
+
   detailsContainer: {
     flex: 1,
-  },
+  } as ViewStyle,
+
   nameText: {
     fontSize: 18,
     fontWeight: '500',
-    color: '#111827',
-  },
+    color: colors.text,
+  } as TextStyle,
+
   infoRow: {
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 4,
-  },
+  } as ViewStyle,
+
   infoText: {
     fontSize: 14,
-    color: '#4B5563',
+    color: colors.text,
     marginRight: 5,
     textTransform: 'capitalize',
-  },
+  } as TextStyle,
+
   editButton: {
     height: 60,
     width: 60,
-    backgroundColor: '#E5E7EB',
+    backgroundColor: colors.text,
     borderRadius: 100,
     alignItems: 'center',
     justifyContent: 'center',
     marginLeft: 12,
-  },
+  } as ViewStyle,
 });
