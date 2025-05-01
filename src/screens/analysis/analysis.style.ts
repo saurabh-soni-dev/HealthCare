@@ -1,7 +1,8 @@
-import {StyleSheet} from 'react-native';
+import {ViewStyle} from 'react-native';
 
-export const styles = StyleSheet.create({
-  container: {
+export const createStyles = (colors: any) => ({
+  screenContainer: {
     flex: 1,
-  },
+    backgroundColor: colors.background,
+  } as ViewStyle,
 });

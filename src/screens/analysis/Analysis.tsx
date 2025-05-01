@@ -1,13 +1,13 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React, {FC} from 'react';
-import {styles} from './analysis.style';
 import CustomStatusBar from '../../components/CustomStatusBar';
+import useAnalysis from './useAnalysis';
 
 const Analysis: FC = () => {
+  const {styles} = useAnalysis();
   return (
-    <View style={styles.container}>
+    <View style={styles.screenContainer}>
       <CustomStatusBar />
-      <Text>Analysis</Text>
     </View>
   );
 };
