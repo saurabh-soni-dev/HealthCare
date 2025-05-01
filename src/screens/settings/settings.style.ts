@@ -1,4 +1,5 @@
 import {ViewStyle, TextStyle, ImageStyle} from 'react-native';
+import fonts from '../../theme/fonts';
 
 export const createStyles = (colors: any) => ({
   screenContainer: {
@@ -16,12 +17,13 @@ export const createStyles = (colors: any) => ({
   titleText: {
     fontSize: 32,
     color: colors.text,
+    fontFamily: fonts.openSansBold,
   } as TextStyle,
 
   profileContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 50,
+    marginTop: 45,
   } as ViewStyle,
 
   profileImageWrapper: {
@@ -38,32 +40,36 @@ export const createStyles = (colors: any) => ({
     width: 65,
     borderRadius: 35,
     borderWidth: 2,
-    borderColor: colors.border,
+    borderColor: colors.text,
   } as ImageStyle,
 
   profileTextContainer: {
-    left: 15,
+    left: 10,
   } as ViewStyle,
 
   profileName: {
     fontSize: 28,
     color: colors.text,
+    fontFamily: fonts.openSansSemiBold,
   } as TextStyle,
 
   profileLocation: {
     fontSize: 16,
     color: colors.text,
+    fontFamily: fonts.openSansMedium,
   } as TextStyle,
 
   darkTheme: {
-    padding: 20,
+    paddingVertical: 30,
+    paddingHorizontal: 20,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   } as ViewStyle,
 
   darkThemeText: {
-    fontSize: 22,
+    fontSize: 18,
     color: colors.text,
+    fontFamily: fonts.openSansRegular,
   } as TextStyle,
 });

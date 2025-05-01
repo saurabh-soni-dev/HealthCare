@@ -3,7 +3,7 @@ import {Image, TouchableHighlight, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import CustomStatusBar from '../../components/CustomStatusBar';
 import CustomText from '../../components/CustomText';
-import {LGColor} from '../../theme/colors';
+import {LGColor, LGDarkColor} from '../../theme/colors';
 import info from '../../utility/userInfo.json';
 import useSettings from './useSettings';
 import {Switch} from 'react-native';
@@ -14,9 +14,7 @@ const Settings: FC = () => {
   return (
     <View style={styles.screenContainer}>
       <LinearGradient
-        start={{x: 0, y: 1.6}}
-        end={{x: 2, y: 0.5}}
-        colors={LGColor}
+        colors={isDark ? LGDarkColor : LGColor}
         style={styles.gradient}>
         <CustomStatusBar />
         <View style={styles.headerContainer}>

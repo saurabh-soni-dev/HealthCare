@@ -1,4 +1,5 @@
 import {TextStyle, ViewStyle} from 'react-native';
+import fonts from '../../theme/fonts';
 
 export const createStyles = (colors: any) => ({
   screenContainer: {
@@ -17,8 +18,9 @@ export const createStyles = (colors: any) => ({
 
   userNameText: {
     flex: 1,
-    fontSize: 24,
+    fontSize: 22,
     color: colors.text,
+    fontFamily: fonts.openSansSemiBold,
   } as TextStyle,
 
   patientListSection: {
@@ -36,6 +38,12 @@ export const createStyles = (colors: any) => ({
     alignItems: 'center',
     justifyContent: 'space-between',
   } as ViewStyle,
+
+  patientListCount: {
+    fontSize: 16,
+    color: colors.text,
+    fontFamily: fonts.openSansMedium,
+  } as TextStyle,
 
   patientListHeaderRight: {
     flexDirection: 'row',

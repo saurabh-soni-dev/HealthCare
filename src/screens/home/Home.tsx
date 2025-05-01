@@ -38,6 +38,7 @@ const Home: FC = () => {
             <CustomText
               text={`${info.yourPatients}(${patientList.length})`}
               numberOfLines={2}
+              style={styles.patientListCount}
             />
             <View style={styles.patientListHeaderRight}>
               <IconButon

@@ -12,6 +12,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 import iconName from '../../utility/iconName.json';
 import {useSettingsContext} from '../../i18n/SettingsContext';
+import fonts from '../../theme/fonts';
 
 // Patient type definition
 interface Patient {
@@ -102,6 +103,7 @@ const createStyles = (colors: any) => ({
     fontSize: 18,
     fontWeight: '500',
     color: colors.text,
+    fontFamily: fonts.openSansBold,
   } as TextStyle,
 
   infoRow: {
@@ -115,6 +117,7 @@ const createStyles = (colors: any) => ({
     color: colors.text,
     marginRight: 5,
     textTransform: 'capitalize',
+    fontFamily: fonts.openSansRegular,
   } as TextStyle,
 
   editButton: {

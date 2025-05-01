@@ -25,4 +25,15 @@ export const LGColor = [
   '#e9d5ff',
   '#f3e8ff',
   '#F5F5F5',
+  '#ffffff',
+];
+
+export const LGDarkColor = [
+  '#641ba3',
+  '#641ba3',
+  '#4a1772',
+  '#2f0553',
+  '#1a032e',
+  '#1F1F1F',
+  '#111111',
 ];
