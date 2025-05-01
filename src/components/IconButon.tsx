@@ -6,15 +6,25 @@ interface IconButonProps {
   iconName: string;
   onPress: () => void;
   style?: ViewStyle;
+  iconColor?: string;
 }
 
-const IconButon: FC<IconButonProps> = ({iconName, onPress, style}) => {
+const IconButon: FC<IconButonProps> = ({
+  iconName,
+  onPress,
+  style,
+  iconColor,
+}) => {
   return (
     <TouchableHighlight
       onPress={onPress}
       underlayColor={'#6B7280'}
       style={[styles.button, {...style}]}>
-      <Icon name={iconName} size={24} color={'#111111'} />
+      <Icon
+        name={iconName}
+        size={24}
+        color={iconColor ? iconColor : '#111111'}
+      />
     </TouchableHighlight>
   );
 };

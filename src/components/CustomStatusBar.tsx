@@ -14,7 +14,7 @@ interface CustomStatusBarProps {
 const CustomStatusBar: FC<CustomStatusBarProps> = ({
   containerStyle,
   backgroundColor,
-  barStyle,
+  barStyle = 'default',
   animated,
   translucent,
   hidden,

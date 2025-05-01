@@ -11,7 +11,7 @@ const useSplash = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('Home');
+      navigation.navigate('HomeTabs');
     }, 2000);
   });
 

@@ -6,7 +6,7 @@ import HomeTabs from '../bottomTab/HomeTabs';
 
 export const stackScreens = [
   {name: 'Splash', component: Splash},
-  {name: 'Home', component: HomeTabs},
+  {name: 'HomeTabs', component: HomeTabs},
   {name: 'PatientsDetails', component: PatientsDetails},
   {name: 'Notification', component: Notification},
   {name: 'AddPatients', component: AddPatients},

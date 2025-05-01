@@ -1,5 +1,5 @@
 export const lightTheme = {
-  primary: '#641ba3', // purple
+  primary: '#173da6', // purple
   background: '#FFFFFF', // white
   card: '#F5F5F5', // offWhite
   text: '#111111', // black
@@ -8,7 +8,7 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  primary: '#641ba3', // purple
+  primary: '#173da6', // purple
   background: '#111111', // black
   card: '#1F1F1F', // slightly lighter black
   text: '#FFFFFF', // white
@@ -17,23 +17,21 @@ export const darkTheme = {
 };
 
 export const LGColor = [
-  '#641ba3',
-  '#9333ea',
-  '#a855f7',
-  '#c084fc',
-  '#d8b4fe',
-  '#e9d5ff',
-  '#f3e8ff',
-  '#F5F5F5',
+  '#173da6',
+  '#2563eb',
+  '#3b82f6',
+  '#60a5fa',
+  '#a3cfff',
+  '#bfdbfe',
+  '#dbeafe',
+  '#eff6ff',
   '#ffffff',
 ];
 
 export const LGDarkColor = [
-  '#641ba3',
-  '#641ba3',
-  '#4a1772',
-  '#2f0553',
-  '#1a032e',
-  '#1F1F1F',
+  '#173da6',
+  '#1a3478',
+  '#14204a',
+  '#0c142e',
   '#111111',
 ];
