@@ -1,9 +1,10 @@
-import {View, Text, ViewStyle, TextStyle} from 'react-native';
 import React, {FC} from 'react';
+import {Text, TextStyle, View, ViewStyle} from 'react-native';
 import {useSettingsContext} from '../i18n/SettingsContext';
 import fonts from '../theme/fonts';
-import IconButon from './IconButon';
+import {scaleFont, verticalScale} from '../utility/functions';
 import iconName from '../utility/iconName.json';
+import IconButon from './IconButon';
 
 interface AddCardProps {
   title: string;
@@ -32,16 +33,16 @@ export default AddCard;
 
 const createStyles = (colors: any) => ({
   card: {
-    height: '30%',
+    height: verticalScale(160),
     width: '100%',
     backgroundColor: colors.primary,
     borderRadius: 20,
-    padding: 15,
+    padding: verticalScale(15),
     justifyContent: 'space-between',
   } as ViewStyle,
 
   title: {
-    fontSize: 18,
+    fontSize: scaleFont(18),
     fontFamily: fonts.openSansSemiBold,
     color: '#FFFFFF',
   } as TextStyle,

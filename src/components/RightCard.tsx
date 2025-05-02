@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import {useSettingsContext} from '../i18n/SettingsContext';
 import fonts from '../theme/fonts';
+import {horizontalScale, scaleFont, verticalScale} from '../utility/functions';
 
 interface RightCardProps {
   nameOfDoctor: string;
@@ -72,12 +73,12 @@ export default RightCard;
 
 const createStyles = (colors: any) => ({
   card: {
-    height: '48%',
+    height: verticalScale(280),
     width: '100%',
     backgroundColor: colors.card,
     borderRadius: 20,
-    padding: 15,
-    marginBottom: 10,
+    padding: verticalScale(15),
+    marginBottom: verticalScale(10),
   } as ViewStyle,
 
   headerRow: {
@@ -86,59 +87,59 @@ const createStyles = (colors: any) => ({
   } as ViewStyle,
 
   title: {
-    fontSize: 18,
+    fontSize: scaleFont(18),
     fontFamily: fonts.openSansSemiBold,
     color: colors.text,
     width: '60%',
   } as TextStyle,
 
   imageWrapper: {
-    height: '24%',
-    width: '40%',
+    height: verticalScale(50),
+    width: horizontalScale(50),
     backgroundColor: colors.background,
-    borderRadius: 100,
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
   } as ViewStyle,
 
   profileImage: {
-    height: 60,
-    width: 60,
-    borderRadius: 30,
+    height: verticalScale(50),
+    width: horizontalScale(50),
+    borderRadius: 10,
   } as ImageStyle,
 
   textGroup: {
-    marginTop: 25,
+    marginTop: verticalScale(25),
   } as ViewStyle,
 
   type: {
-    fontSize: 14,
+    fontSize: scaleFont(14),
     color: colors.text,
     fontFamily: fonts.openSansRegular,
   } as TextStyle,
 
   body: {
-    fontSize: 18,
+    fontSize: scaleFont(18),
     color: colors.text,
     marginBottom: 4,
     fontFamily: fonts.openSansBold,
   } as TextStyle,
 
   num: {
-    fontSize: 14,
+    fontSize: scaleFont(14),
     color: colors.text,
     fontFamily: fonts.openSansRegular,
   } as TextStyle,
 
   xrayContainer: {
-    marginTop: 25,
+    marginTop: verticalScale(25),
     backgroundColor: colors.border,
-    height: 85,
+    height: verticalScale(85),
     borderRadius: 20,
   } as ViewStyle,
 
   xrayImage: {
-    height: 85,
+    height: verticalScale(85),
     width: '100%',
     borderRadius: 10,
   } as ImageStyle,
