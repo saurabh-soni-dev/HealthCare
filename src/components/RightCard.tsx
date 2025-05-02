@@ -73,7 +73,7 @@ export default RightCard;
 
 const createStyles = (colors: any) => ({
   card: {
-    height: verticalScale(280),
+    height: verticalScale(260),
     width: '100%',
     backgroundColor: colors.card,
     borderRadius: 20,
@@ -84,18 +84,19 @@ const createStyles = (colors: any) => ({
   headerRow: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
   } as ViewStyle,
 
   title: {
-    fontSize: scaleFont(18),
+    fontSize: scaleFont(16),
     fontFamily: fonts.openSansSemiBold,
     color: colors.text,
     width: '60%',
   } as TextStyle,
 
   imageWrapper: {
-    height: verticalScale(50),
-    width: horizontalScale(50),
+    height: verticalScale(45),
+    width: horizontalScale(45),
     backgroundColor: colors.background,
     borderRadius: 10,
     alignItems: 'center',
@@ -103,13 +104,13 @@ const createStyles = (colors: any) => ({
   } as ViewStyle,
 
   profileImage: {
-    height: verticalScale(50),
-    width: horizontalScale(50),
+    height: verticalScale(45),
+    width: horizontalScale(45),
     borderRadius: 10,
   } as ImageStyle,
 
   textGroup: {
-    marginTop: verticalScale(25),
+    marginTop: verticalScale(20),
   } as ViewStyle,
 
   type: {
@@ -132,14 +133,14 @@ const createStyles = (colors: any) => ({
   } as TextStyle,
 
   xrayContainer: {
-    marginTop: verticalScale(25),
+    marginTop: verticalScale(20),
     backgroundColor: colors.border,
-    height: verticalScale(85),
+    height: verticalScale(80),
     borderRadius: 20,
   } as ViewStyle,
 
   xrayImage: {
-    height: verticalScale(85),
+    height: verticalScale(80),
     width: '100%',
     borderRadius: 10,
   } as ImageStyle,

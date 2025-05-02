@@ -10,7 +10,7 @@ export const createStyles = (colors: any) => ({
   contentContainer: {
     flex: 1,
     paddingHorizontal: horizontalScale(20),
-    marginTop: verticalScale(20),
+    marginTop: verticalScale(5),
     flexDirection: 'row',
   } as ViewStyle,
 
