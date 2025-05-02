@@ -13,6 +13,7 @@ import Home from '../../screens/home/Home';
 import Settings from '../../screens/settings/Settings';
 import iconName from '../../utility/iconName.json';
 import {createStyles} from './homeTabs.style';
+import {scaleFont} from '../../utility/functions';
 
 const Tab = createBottomTabNavigator();
 
@@ -65,7 +66,7 @@ function MyTabBar({state, navigation}: BottomTabBarProps) {
             onPress={onPress}
             href={buildHref(route.name)}
             style={[styles.button, isFocused && styles.focusedButton]}>
-            <Icon name={icon} size={24} color={colors.text} />
+            <Icon name={icon} size={scaleFont(24)} color={colors.text} />
           </PlatformPressable>
         );
       })}

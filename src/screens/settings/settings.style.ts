@@ -1,5 +1,10 @@
 import {ViewStyle, TextStyle, ImageStyle} from 'react-native';
 import fonts from '../../theme/fonts';
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from '../../utility/functions';
 
 export const createStyles = (colors: any) => ({
   screenContainer: {
@@ -11,11 +16,11 @@ export const createStyles = (colors: any) => ({
   } as ViewStyle,
 
   headerContainer: {
-    padding: 20,
+    padding: verticalScale(20),
   } as ViewStyle,
 
   titleText: {
-    fontSize: 32,
+    fontSize: scaleFont(32),
     color: colors.text,
     fontFamily: fonts.openSansBold,
   } as TextStyle,
@@ -23,23 +28,23 @@ export const createStyles = (colors: any) => ({
   profileContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 45,
+    marginTop: verticalScale(45),
   } as ViewStyle,
 
   profileImageWrapper: {
-    height: 65,
-    width: 65,
-    borderRadius: 35,
+    height: 60,
+    width: 60,
+    borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.card,
   } as ViewStyle,
 
   profileImage: {
-    height: 65,
-    width: 65,
-    borderRadius: 35,
-    borderWidth: 2,
+    height: 60,
+    width: 60,
+    borderRadius: 15,
+    borderWidth: 0.5,
     borderColor: colors.text,
   } as ImageStyle,
 
@@ -48,27 +53,27 @@ export const createStyles = (colors: any) => ({
   } as ViewStyle,
 
   profileName: {
-    fontSize: 28,
+    fontSize: scaleFont(32),
     color: colors.text,
     fontFamily: fonts.openSansSemiBold,
   } as TextStyle,
 
   profileLocation: {
-    fontSize: 16,
+    fontSize: scaleFont(16),
     color: colors.text,
     fontFamily: fonts.openSansMedium,
   } as TextStyle,
 
   darkTheme: {
-    paddingVertical: 50,
-    paddingHorizontal: 20,
+    paddingVertical: verticalScale(50),
+    paddingHorizontal: horizontalScale(20),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   } as ViewStyle,
 
   darkThemeText: {
-    fontSize: 18,
+    fontSize: scaleFont(18),
     color: colors.text,
     fontFamily: fonts.openSansRegular,
   } as TextStyle,

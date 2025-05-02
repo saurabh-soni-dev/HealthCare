@@ -1,14 +1,10 @@
-import {
-  View,
-  Text,
-  TextStyle,
-  ViewStyle,
-  TouchableHighlight,
-} from 'react-native';
 import React, {FC} from 'react';
+import {Text, TextStyle, View, ViewStyle} from 'react-native';
 import {useSettingsContext} from '../i18n/SettingsContext';
 import fonts from '../theme/fonts';
-import Icon from 'react-native-vector-icons/Ionicons';
+import {horizontalScale, scaleFont, verticalScale} from '../utility/functions';
+import iconName from '../utility/iconName.json';
+import IconButon from './IconButon';
 
 interface CustomHeaderProps {
   title: string;
@@ -22,16 +18,13 @@ const CustomHeader: FC<CustomHeaderProps> = ({title, subTitle, onBack}) => {
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        <TouchableHighlight
+        <IconButon
+          iconName={iconName.back}
+          iconSize={20}
+          iconColor={theme.colors.card}
           onPress={onBack}
-          underlayColor="#D1D5DB"
-          style={styles.editButton}>
-          <Icon
-            name={'chevron-back-outline'}
-            size={24}
-            color={theme.colors.card}
-          />
-        </TouchableHighlight>
+          style={styles.editButton}
+        />
         <View>
           <Text allowFontScaling={false} numberOfLines={1} style={styles.title}>
             {title}
@@ -52,8 +45,8 @@ export default CustomHeader;
 
 const createStyles = (colors: any) => ({
   container: {
-    paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingHorizontal: horizontalScale(20),
+    paddingVertical: verticalScale(20),
     width: '100%',
   } as ViewStyle,
 
@@ -63,25 +56,20 @@ const createStyles = (colors: any) => ({
   } as ViewStyle,
 
   title: {
-    fontSize: 18,
+    fontSize: scaleFont(18),
     fontFamily: fonts.openSansMedium,
     color: colors.text,
   } as TextStyle,
 
   subTitle: {
-    fontSize: 14,
+    fontSize: scaleFont(14),
     fontFamily: fonts.openSansRegular,
     color: colors.text,
-    marginTop: 2,
   } as TextStyle,
 
   editButton: {
-    height: 60,
-    width: 60,
     backgroundColor: colors.text,
-    borderRadius: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 10,
+    marginRight: horizontalScale(10),
+    padding: verticalScale(14),
   } as ViewStyle,
 });

@@ -4,15 +4,19 @@ import {
   ImageStyle,
   Text,
   TextStyle,
-  TouchableHighlight,
   TouchableOpacity,
   View,
   ViewStyle,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import iconName from '../../utility/iconName.json';
 import {useSettingsContext} from '../../i18n/SettingsContext';
 import fonts from '../../theme/fonts';
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from '../../utility/functions';
+import iconName from '../../utility/iconName.json';
+import IconButon from '../IconButon';
 
 // Patient type definition
 interface Patient {
@@ -61,12 +65,13 @@ const PatientCard: FC<PatientCardProps> = ({item, onPress, onPressEdit}) => {
         </View>
       </View>
 
-      <TouchableHighlight
-        onPress={onPressEdit}
-        underlayColor="#D1D5DB"
-        style={styles.editButton}>
-        <Icon name={iconName.edit} size={20} color={colors.card} />
-      </TouchableHighlight>
+      <IconButon
+        iconName={iconName.edit}
+        iconSize={20}
+        iconColor={colors.card}
+        onPress={() => onPressEdit}
+        style={styles.editButton}
+      />
     </TouchableOpacity>
   );
 };
@@ -80,19 +85,19 @@ const createStyles = (colors: any) => ({
   } as ViewStyle,
 
   imageWrapper: {
-    height: 60,
-    width: 60,
+    height: verticalScale(60),
+    width: horizontalScale(60),
     backgroundColor: colors.background,
-    borderRadius: 100,
-    marginRight: 12,
+    borderRadius: 15,
+    marginRight: horizontalScale(12),
     alignItems: 'center',
     justifyContent: 'center',
   } as ViewStyle,
 
   profileImage: {
-    height: 60,
-    width: 60,
-    borderRadius: 30,
+    height: verticalScale(60),
+    width: horizontalScale(60),
+    borderRadius: 15,
   } as ImageStyle,
 
   detailsContainer: {
@@ -100,7 +105,7 @@ const createStyles = (colors: any) => ({
   } as ViewStyle,
 
   nameText: {
-    fontSize: 18,
+    fontSize: scaleFont(18),
     fontWeight: '500',
     color: colors.text,
     fontFamily: fonts.openSansBold,
@@ -113,20 +118,14 @@ const createStyles = (colors: any) => ({
   } as ViewStyle,
 
   infoText: {
-    fontSize: 14,
+    fontSize: scaleFont(14),
     color: colors.text,
-    marginRight: 5,
+    marginRight: horizontalScale(5),
     textTransform: 'capitalize',
     fontFamily: fonts.openSansRegular,
   } as TextStyle,
 
   editButton: {
-    height: 60,
-    width: 60,
     backgroundColor: colors.text,
-    borderRadius: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginLeft: 12,
   } as ViewStyle,
 });

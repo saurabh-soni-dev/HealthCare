@@ -1,5 +1,11 @@
 import {TextStyle, ViewStyle} from 'react-native';
 import fonts from '../../theme/fonts';
+import {
+  horizontalScale,
+  moderateScale,
+  scaleFont,
+  verticalScale,
+} from '../../utility/functions';
 
 export const createStyles = (colors: any) => ({
   screenContainer: {
@@ -8,7 +14,7 @@ export const createStyles = (colors: any) => ({
   } as ViewStyle,
 
   contentWrapper: {
-    padding: 20,
+    padding: moderateScale(20),
   } as ViewStyle,
 
   headerRow: {
@@ -18,7 +24,7 @@ export const createStyles = (colors: any) => ({
 
   userNameText: {
     flex: 1,
-    fontSize: 22,
+    fontSize: scaleFont(22),
     color: colors.text,
     fontFamily: fonts.openSansSemiBold,
   } as TextStyle,
@@ -29,18 +35,18 @@ export const createStyles = (colors: any) => ({
 
   patientListContent: {
     flexGrow: 1,
-    rowGap: 12,
+    rowGap: verticalScale(12),
   } as ViewStyle,
 
   patientListHeader: {
-    marginVertical: 15,
+    marginVertical: verticalScale(15),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   } as ViewStyle,
 
   patientListCount: {
-    fontSize: 16,
+    fontSize: scaleFont(16),
     color: colors.text,
     fontFamily: fonts.openSansMedium,
   } as TextStyle,
@@ -51,13 +57,12 @@ export const createStyles = (colors: any) => ({
   } as ViewStyle,
 
   clockIconButton: {
-    marginRight: 10,
-    borderWidth: 1,
+    marginRight: horizontalScale(10),
+    borderWidth: horizontalScale(1),
     borderStyle: 'dashed',
-    padding: 19,
   } as ViewStyle,
 
   listFooterSpacing: {
-    marginBottom: 450,
+    marginBottom: verticalScale(450),
   } as ViewStyle,
 });

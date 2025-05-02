@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import {useSettingsContext} from '../i18n/SettingsContext';
 import fonts from '../theme/fonts';
+import {scaleFont, verticalScale} from '../utility/functions';
 
 interface TextButtonProps {
   title: string;
@@ -47,7 +48,7 @@ export default TextButton;
 
 const createStyles = (colors: any) => ({
   button: {
-    height: 55,
+    height: verticalScale(55),
     backgroundColor: colors.notification,
     justifyContent: 'center',
     alignItems: 'center',
@@ -55,7 +56,7 @@ const createStyles = (colors: any) => ({
   } as ViewStyle,
 
   title: {
-    fontSize: 16,
+    fontSize: scaleFont(16),
     fontFamily: fonts.openSansSemiBold,
     color: '#111111',
   } as TextStyle,

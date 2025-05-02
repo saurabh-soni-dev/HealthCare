@@ -1,24 +1,25 @@
 import {ViewStyle} from 'react-native';
+import {horizontalScale, verticalScale} from '../../utility/functions';
 
 export const createStyles = (colors: any) => ({
   tabBar: {
-    height: 70,
+    height: verticalScale(70),
     position: 'absolute',
     flexDirection: 'row',
     backgroundColor: colors.text,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    bottom: 25,
-    padding: 5,
+    bottom: verticalScale(18),
+    padding: verticalScale(5),
     borderRadius: 100,
-    gap: 4,
+    gap: horizontalScale(4),
   } as ViewStyle,
   button: {
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.background,
-    padding: 18,
+    padding: verticalScale(18),
     borderRadius: 100,
   } as ViewStyle,
   focusedButton: {
