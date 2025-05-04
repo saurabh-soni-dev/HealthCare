@@ -1,7 +1,6 @@
 import React, {FC} from 'react';
 import {View} from 'react-native';
-import CustomHeader from '../../components/CustomHeader';
-import CustomStatusBar from '../../components/CustomStatusBar';
+import {CustomHeader, CustomStatusBar} from '../../components';
 import useAddPatients from './useAddPatients';
 
 const AddPatients: FC = () => {

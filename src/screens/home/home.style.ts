@@ -1,11 +1,11 @@
 import {TextStyle, ViewStyle} from 'react-native';
-import fonts from '../../theme/fonts';
 import {
   horizontalScale,
   moderateScale,
   scaleFont,
   verticalScale,
 } from '../../utility/functions';
+import {font} from '../../theme';
 
 export const createStyles = (colors: any) => ({
   screenContainer: {
@@ -26,7 +26,7 @@ export const createStyles = (colors: any) => ({
     flex: 1,
     fontSize: scaleFont(22),
     color: colors.text,
-    fontFamily: fonts.openSansSemiBold,
+    fontFamily: font.openSansSemiBold,
   } as TextStyle,
 
   patientListSection: {
@@ -48,7 +48,7 @@ export const createStyles = (colors: any) => ({
   patientListCount: {
     fontSize: scaleFont(16),
     color: colors.text,
-    fontFamily: fonts.openSansMedium,
+    fontFamily: font.openSansMedium,
   } as TextStyle,
 
   patientListHeaderRight: {

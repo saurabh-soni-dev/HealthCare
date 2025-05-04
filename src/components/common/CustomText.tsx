@@ -1,6 +1,6 @@
 import {Text, TextStyle} from 'react-native';
 import React, {FC} from 'react';
-import {useSettingsContext} from '../i18n/SettingsContext';
+import {useSettingsContext} from '../../i18n/SettingsContext';
 
 interface CustomTextProps {
   text: string;

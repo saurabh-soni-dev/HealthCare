@@ -11,9 +11,8 @@ import {useSettingsContext} from '../../i18n/SettingsContext';
 import Analysis from '../../screens/analysis/Analysis';
 import Home from '../../screens/home/Home';
 import Settings from '../../screens/settings/Settings';
-import iconName from '../../utility/iconName.json';
 import {createStyles} from './homeTabs.style';
-import {scaleFont} from '../../utility/functions';
+import {iconName, scaleFont} from '../../utility';
 
 const Tab = createBottomTabNavigator();
 

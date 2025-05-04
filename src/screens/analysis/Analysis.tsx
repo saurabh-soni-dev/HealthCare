@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import React, {FC} from 'react';
-import CustomStatusBar from '../../components/CustomStatusBar';
 import useAnalysis from './useAnalysis';
+import {CustomStatusBar} from '../../components';
 
 const Analysis: FC = () => {
   const {styles} = useAnalysis();

@@ -1,12 +1,10 @@
 import React, {FC} from 'react';
-import {Image, TouchableHighlight, View} from 'react-native';
+import {Image, Switch, TouchableHighlight, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import CustomStatusBar from '../../components/CustomStatusBar';
-import CustomText from '../../components/CustomText';
-import {LGColor, LGDarkColor} from '../../theme/colors';
+import {CustomStatusBar, CustomText} from '../../components';
+import {LGColor, LGDarkColor} from '../../theme';
 import info from '../../utility/userInfo.json';
 import useSettings from './useSettings';
-import {Switch} from 'react-native';
 
 const Settings: FC = () => {
   const {styles, isDark, toggleTheme, colors} = useSettings();

@@ -7,7 +7,7 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import {darkTheme, lightTheme} from '../theme/colors';
+import {darkTheme, lightTheme} from '../theme';
 
 // Define the types for the SettingsContext
 type SettingsContextType = {

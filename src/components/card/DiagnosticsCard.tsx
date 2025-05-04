@@ -1,16 +1,15 @@
 import React, {FC} from 'react';
 import {Text, TextStyle, View, ViewStyle} from 'react-native';
-import {useSettingsContext} from '../i18n/SettingsContext';
-import fonts from '../theme/fonts';
-import {scaleFont, verticalScale} from '../utility/functions';
-import iconName from '../utility/iconName.json';
-import IconButon from './IconButon';
+import {useSettingsContext} from '../../i18n/SettingsContext';
+import {font} from '../../theme';
+import {iconName, scaleFont, verticalScale} from '../../utility';
+import IconButon from '../common/IconButon';
 
-interface AddCardProps {
+interface DiagnosticsCardProps {
   title: string;
 }
 
-const AddCard: FC<AddCardProps> = ({title}) => {
+const DiagnosticsCard: FC<DiagnosticsCardProps> = ({title}) => {
   const {theme} = useSettingsContext();
   const styles = createStyles(theme.colors);
 
@@ -29,7 +28,7 @@ const AddCard: FC<AddCardProps> = ({title}) => {
   );
 };
 
-export default AddCard;
+export default DiagnosticsCard;
 
 const createStyles = (colors: any) => ({
   card: {
@@ -43,7 +42,7 @@ const createStyles = (colors: any) => ({
 
   title: {
     fontSize: scaleFont(18),
-    fontFamily: fonts.openSansSemiBold,
+    fontFamily: font.openSansSemiBold,
     color: '#FFFFFF',
   } as TextStyle,
 

@@ -38,8 +38,10 @@ const useHome = () => {
   // function end: navigateToAddPatientsScreen
 
   // function start: navigateToPatientsScreen
-  const navigateToPatientsScreen = () => {
-    navigation.navigate('PatientsDetails');
+  const navigateToPatientsScreen = (patientName: string) => {
+    navigation.navigate('PatientsDetails', {
+      patientName: patientName,
+    });
   };
   // function end: navigateToPatientsScreen
 

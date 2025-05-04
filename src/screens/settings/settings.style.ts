@@ -1,10 +1,6 @@
 import {ViewStyle, TextStyle, ImageStyle} from 'react-native';
-import fonts from '../../theme/fonts';
-import {
-  horizontalScale,
-  scaleFont,
-  verticalScale,
-} from '../../utility/functions';
+import {horizontalScale, scaleFont, verticalScale} from '../../utility';
+import {font} from '../../theme';
 
 export const createStyles = (colors: any) => ({
   screenContainer: {
@@ -22,7 +18,7 @@ export const createStyles = (colors: any) => ({
   titleText: {
     fontSize: scaleFont(32),
     color: colors.text,
-    fontFamily: fonts.openSansBold,
+    fontFamily: font.openSansBold,
   } as TextStyle,
 
   profileContainer: {
@@ -55,13 +51,13 @@ export const createStyles = (colors: any) => ({
   profileName: {
     fontSize: scaleFont(32),
     color: colors.text,
-    fontFamily: fonts.openSansSemiBold,
+    fontFamily: font.openSansSemiBold,
   } as TextStyle,
 
   profileLocation: {
     fontSize: scaleFont(16),
     color: colors.text,
-    fontFamily: fonts.openSansMedium,
+    fontFamily: font.openSansMedium,
   } as TextStyle,
 
   darkTheme: {
@@ -75,6 +71,6 @@ export const createStyles = (colors: any) => ({
   darkThemeText: {
     fontSize: scaleFont(18),
     color: colors.text,
-    fontFamily: fonts.openSansRegular,
+    fontFamily: font.openSansRegular,
   } as TextStyle,
 });

@@ -1,26 +1,35 @@
 import React, {FC} from 'react';
 import {View} from 'react-native';
-import CustomHeader from '../../components/CustomHeader';
-import CustomStatusBar from '../../components/CustomStatusBar';
-import TextButton from '../../components/TextButton';
+import {CustomHeader, CustomStatusBar, TextButton} from '../../components';
+import {DiagnosticsCard, LeftCard, RightCard} from '../../components/cardIndex';
 import usePatientsDetails from './usePatientsDetails';
-import AddCard from '../../components/AddCard';
-import RightCard from '../../components/RightCard';
 
 const PatientsDetails: FC = () => {
-  const {styles, onPressBackIcon} = usePatientsDetails();
-
+  const {styles, onPressBackIcon, patientName} = usePatientsDetails();
   return (
     <View style={styles.container}>
       <CustomStatusBar />
       <CustomHeader
-        title="Brooklyn Simmons"
+        title={patientName}
         subTitle="Action Plan"
         onBack={onPressBackIcon}
       />
       <View style={styles.contentContainer}>
         <View style={styles.leftColumn}>
-          <AddCard title="Assign Diagnostics" />
+          <DiagnosticsCard title="Assign Diagnostics" />
+          <LeftCard
+            testName="Lab Tests"
+            testIcon="logo-gitlab"
+            type="Full Full Blood"
+            typeIcon="document-outline"
+            body="TEST"
+            num="24.11"
+            type1="Puncture"
+            type1Icon="document-outline"
+            body1="TEST"
+            num1="24.11"
+            exray="https://randomuser.me/api/portraits/women/8.jpg"
+          />
         </View>
         <View style={styles.rightColumn}>
           <RightCard

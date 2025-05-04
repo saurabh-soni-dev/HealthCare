@@ -7,9 +7,9 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import {useSettingsContext} from '../i18n/SettingsContext';
-import fonts from '../theme/fonts';
-import {horizontalScale, scaleFont, verticalScale} from '../utility/functions';
+import {useSettingsContext} from '../../i18n/SettingsContext';
+import {font} from '../../theme';
+import {horizontalScale, scaleFont, verticalScale} from '../../utility';
 
 interface RightCardProps {
   nameOfDoctor: string;
@@ -89,7 +89,7 @@ const createStyles = (colors: any) => ({
 
   title: {
     fontSize: scaleFont(16),
-    fontFamily: fonts.openSansSemiBold,
+    fontFamily: font.openSansSemiBold,
     color: colors.text,
     width: '60%',
   } as TextStyle,
@@ -116,20 +116,20 @@ const createStyles = (colors: any) => ({
   type: {
     fontSize: scaleFont(14),
     color: colors.text,
-    fontFamily: fonts.openSansRegular,
+    fontFamily: font.openSansRegular,
   } as TextStyle,
 
   body: {
     fontSize: scaleFont(18),
     color: colors.text,
     marginBottom: 4,
-    fontFamily: fonts.openSansBold,
+    fontFamily: font.openSansBold,
   } as TextStyle,
 
   num: {
     fontSize: scaleFont(14),
     color: colors.text,
-    fontFamily: fonts.openSansRegular,
+    fontFamily: font.openSansRegular,
   } as TextStyle,
 
   xrayContainer: {

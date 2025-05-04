@@ -1,5 +1,5 @@
 import {ViewStyle, TextStyle} from 'react-native';
-import fonts from '../../theme/fonts';
+import {font} from '../../theme';
 
 export const createStyles = (colors: any) => ({
   container: {
@@ -10,7 +10,7 @@ export const createStyles = (colors: any) => ({
   } as ViewStyle,
   textStyle: {
     fontSize: 60,
-    fontFamily: fonts.neonDerthawRegular,
+    fontFamily: font.neonDerthawRegular,
     color: colors.text,
   } as TextStyle,
 });

@@ -1,11 +1,11 @@
-import {StyleSheet, TouchableHighlight, ViewStyle} from 'react-native';
 import React, {FC} from 'react';
+import {StyleSheet, TouchableHighlight, ViewStyle} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {scaleFont, verticalScale} from '../utility/functions';
+import {scaleFont, verticalScale} from '../../utility';
 
 interface IconButonProps {
   iconName: string;
-  onPress: () => void;
+  onPress?: () => void;
   style?: ViewStyle;
   iconColor?: string;
   iconSize?: number;

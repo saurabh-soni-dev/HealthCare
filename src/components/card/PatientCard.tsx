@@ -9,14 +9,14 @@ import {
   ViewStyle,
 } from 'react-native';
 import {useSettingsContext} from '../../i18n/SettingsContext';
-import fonts from '../../theme/fonts';
+import {font} from '../../theme';
 import {
   horizontalScale,
+  iconName,
   scaleFont,
   verticalScale,
-} from '../../utility/functions';
-import iconName from '../../utility/iconName.json';
-import IconButon from '../IconButon';
+} from '../../utility';
+import IconButon from '../common/IconButon';
 
 // Patient type definition
 interface Patient {
@@ -108,7 +108,7 @@ const createStyles = (colors: any) => ({
     fontSize: scaleFont(18),
     fontWeight: '500',
     color: colors.text,
-    fontFamily: fonts.openSansBold,
+    fontFamily: font.openSansBold,
   } as TextStyle,
 
   infoRow: {
@@ -122,7 +122,7 @@ const createStyles = (colors: any) => ({
     color: colors.text,
     marginRight: horizontalScale(5),
     textTransform: 'capitalize',
-    fontFamily: fonts.openSansRegular,
+    fontFamily: font.openSansRegular,
   } as TextStyle,
 
   editButton: {

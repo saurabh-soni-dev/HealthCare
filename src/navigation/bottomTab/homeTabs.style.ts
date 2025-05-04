@@ -1,5 +1,5 @@
 import {ViewStyle} from 'react-native';
-import {horizontalScale, verticalScale} from '../../utility/functions';
+import {horizontalScale, verticalScale} from '../../utility';
 
 export const createStyles = (colors: any) => ({
   tabBar: {

@@ -1,11 +1,8 @@
 import React, {FC} from 'react';
 import {FlatList, View} from 'react-native';
-import PatientCard from '../../components/card/PatientCard';
-import CustomStatusBar from '../../components/CustomStatusBar';
-import CustomText from '../../components/CustomText';
-import IconButon from '../../components/IconButon';
-import iconName from '../../utility/iconName.json';
-import info from '../../utility/userInfo.json';
+import {CustomStatusBar, CustomText, IconButon} from '../../components';
+import {PatientCard} from '../../components/cardIndex';
+import {iconName, userInfo} from '../../utility';
 import useHome from './useHome';
 
 const Home: FC = () => {
@@ -24,7 +21,7 @@ const Home: FC = () => {
       <View style={styles.contentWrapper}>
         <View style={styles.headerRow}>
           <CustomText
-            text={info.name}
+            text={userInfo.name}
             numberOfLines={2}
             style={styles.userNameText}
           />
@@ -36,7 +33,7 @@ const Home: FC = () => {
         <View style={styles.patientListSection}>
           <View style={styles.patientListHeader}>
             <CustomText
-              text={`${info.yourPatients}(${patientList.length})`}
+              text={`${userInfo.yourPatients}(${patientList.length})`}
               numberOfLines={2}
               style={styles.patientListCount}
             />
@@ -59,7 +56,7 @@ const Home: FC = () => {
               <PatientCard
                 key={index}
                 item={item}
-                onPress={navigateToPatientsScreen}
+                onPress={() => navigateToPatientsScreen(item.name)}
                 onPressEdit={() => onPressEdit(item.name)}
               />
             )}

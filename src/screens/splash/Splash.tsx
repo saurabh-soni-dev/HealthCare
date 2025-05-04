@@ -1,8 +1,7 @@
-import {View} from 'react-native';
 import React, {FC} from 'react';
-import CustomText from '../../components/CustomText';
+import {View} from 'react-native';
+import {CustomStatusBar, CustomText} from '../../components';
 import useSplash from './useSplash';
-import CustomStatusBar from '../../components/CustomStatusBar';
 
 const Splash: FC = () => {
   const {styles} = useSplash();

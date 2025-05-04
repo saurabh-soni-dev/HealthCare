@@ -1,9 +1,13 @@
 import React, {FC} from 'react';
 import {Text, TextStyle, View, ViewStyle} from 'react-native';
-import {useSettingsContext} from '../i18n/SettingsContext';
-import fonts from '../theme/fonts';
-import {horizontalScale, scaleFont, verticalScale} from '../utility/functions';
-import iconName from '../utility/iconName.json';
+import {useSettingsContext} from '../../i18n/SettingsContext';
+import {font} from '../../theme';
+import {
+  horizontalScale,
+  iconName,
+  scaleFont,
+  verticalScale,
+} from '../../utility';
 import IconButon from './IconButon';
 
 interface CustomHeaderProps {
@@ -57,13 +61,13 @@ const createStyles = (colors: any) => ({
 
   title: {
     fontSize: scaleFont(18),
-    fontFamily: fonts.openSansMedium,
+    fontFamily: font.openSansMedium,
     color: colors.text,
   } as TextStyle,
 
   subTitle: {
     fontSize: scaleFont(14),
-    fontFamily: fonts.openSansRegular,
+    fontFamily: font.openSansRegular,
     color: colors.text,
   } as TextStyle,
 

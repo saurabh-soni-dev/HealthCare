@@ -6,9 +6,9 @@ import {
   TouchableHighlight,
   ViewStyle,
 } from 'react-native';
-import {useSettingsContext} from '../i18n/SettingsContext';
-import fonts from '../theme/fonts';
-import {scaleFont, verticalScale} from '../utility/functions';
+import {useSettingsContext} from '../../i18n/SettingsContext';
+import {font} from '../../theme';
+import {scaleFont, verticalScale} from '../../utility';
 
 interface TextButtonProps {
   title: string;
@@ -57,7 +57,7 @@ const createStyles = (colors: any) => ({
 
   title: {
     fontSize: scaleFont(16),
-    fontFamily: fonts.openSansSemiBold,
+    fontFamily: font.openSansSemiBold,
     color: '#111111',
   } as TextStyle,
 });
