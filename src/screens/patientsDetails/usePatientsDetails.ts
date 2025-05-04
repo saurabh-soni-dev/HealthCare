@@ -24,8 +24,13 @@ const usePatientsDetails = () => {
   const onPressBackIcon = () => {
     navigation.goBack();
   };
+  // function start: navigateToAddPatientsScreen
+  const navigateToDiagnosticsScreen = () => {
+    navigation.navigate('Diagnostics');
+  };
+  // function end: navigateToAddPatientsScreen
 
-  return {styles, onPressBackIcon, patientName};
+  return {styles, onPressBackIcon, patientName, navigateToDiagnosticsScreen};
 };
 
 export default usePatientsDetails;

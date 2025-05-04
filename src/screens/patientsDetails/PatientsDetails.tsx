@@ -5,7 +5,8 @@ import {DiagnosticsCard, LeftCard, RightCard} from '../../components/cardIndex';
 import usePatientsDetails from './usePatientsDetails';
 
 const PatientsDetails: FC = () => {
-  const {styles, onPressBackIcon, patientName} = usePatientsDetails();
+  const {styles, onPressBackIcon, patientName, navigateToDiagnosticsScreen} =
+    usePatientsDetails();
   return (
     <View style={styles.container}>
       <CustomStatusBar />
@@ -16,7 +17,10 @@ const PatientsDetails: FC = () => {
       />
       <View style={styles.contentContainer}>
         <View style={styles.leftColumn}>
-          <DiagnosticsCard title="Assign Diagnostics" />
+          <DiagnosticsCard
+            title="Assign Diagnostics"
+            onPressAdd={navigateToDiagnosticsScreen}
+          />
           <LeftCard
             testName="Lab Tests"
             testIcon="logo-gitlab"

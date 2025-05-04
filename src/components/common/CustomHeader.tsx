@@ -12,10 +12,18 @@ import IconButon from './IconButon';
 
 interface CustomHeaderProps {
   title: string;
-  subTitle: string;
+  subTitle?: string;
   onBack: () => void;
+  isDocButton?: boolean;
+  onPressDoc?: () => void;
 }
-const CustomHeader: FC<CustomHeaderProps> = ({title, subTitle, onBack}) => {
+const CustomHeader: FC<CustomHeaderProps> = ({
+  title,
+  subTitle,
+  onBack,
+  isDocButton,
+  onPressDoc,
+}) => {
   const {theme} = useSettingsContext();
   const styles = createStyles(theme.colors);
 
@@ -29,17 +37,29 @@ const CustomHeader: FC<CustomHeaderProps> = ({title, subTitle, onBack}) => {
           onPress={onBack}
           style={styles.editButton}
         />
-        <View>
+        <View style={styles.titleView}>
           <Text allowFontScaling={false} numberOfLines={1} style={styles.title}>
             {title}
           </Text>
-          <Text
-            allowFontScaling={false}
-            numberOfLines={1}
-            style={styles.subTitle}>
-            {subTitle}
-          </Text>
+          {subTitle && (
+            <Text
+              allowFontScaling={false}
+              numberOfLines={1}
+              style={styles.subTitle}>
+              {subTitle}
+            </Text>
+          )}
         </View>
+
+        {isDocButton && (
+          <IconButon
+            iconName={iconName.document}
+            iconSize={20}
+            iconColor={theme.colors.card}
+            style={styles.editButton}
+            onPress={onPressDoc}
+          />
+        )}
       </View>
     </View>
   );
@@ -57,6 +77,10 @@ const createStyles = (colors: any) => ({
   row: {
     flexDirection: 'row',
     alignItems: 'center',
+  } as ViewStyle,
+
+  titleView: {
+    flex: 1,
   } as ViewStyle,
 
   title: {

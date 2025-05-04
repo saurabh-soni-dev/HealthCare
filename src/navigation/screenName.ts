@@ -5,4 +5,5 @@ export default {
   analysis: 'Analysis',
   notification: 'Notification',
   addPatients: 'AddPatients',
+  diagnostics: 'Diagnostics',
 };

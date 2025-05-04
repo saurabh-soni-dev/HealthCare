@@ -4,7 +4,7 @@ export type RootStackParams = {
   PatientsDetails: {
     patientName: string;
   };
-
   Notification: undefined;
   AddPatients: undefined;
+  Diagnostics: undefined;
 };

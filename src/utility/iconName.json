@@ -4,7 +4,10 @@
     "settings":"settings-outline",
     "notification":"notifications-outline",
     "plus":"add-outline",
+    "minus":"remove-outline",
     "clock":"time-outline",
     "edit":"pencil-outline",
-    "back":"chevron-back-outline"
+    "back":"chevron-back-outline",
+    "document":"document-outline",
+    "heart":"heart-dislike-circle-outline"
 }
