@@ -11,14 +11,14 @@ const usePatientsDetails = () => {
   const {colors} = theme;
   const styles = createStyles(colors);
 
-  const [patientName, setPatientName] = useState<string>('');
+  const [patientInfo, setPatientInfo] = useState<any>();
 
   useFocusEffect(
     useCallback(() => {
       if (params?.patientDetails) {
-        setPatientName(params?.patientDetails.name);
+        setPatientInfo(params?.patientDetails);
       }
-    }, [params]),
+    }, [params?.patientDetails]),
   );
 
   const onPressBackIcon = () => {
@@ -32,7 +32,7 @@ const usePatientsDetails = () => {
   };
   // function end: navigateToAddPatientsScreen
 
-  return {styles, onPressBackIcon, patientName, navigateToDiagnosticsScreen};
+  return {styles, onPressBackIcon, patientInfo, navigateToDiagnosticsScreen};
 };
 
 export default usePatientsDetails;

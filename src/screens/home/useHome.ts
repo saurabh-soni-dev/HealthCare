@@ -44,6 +44,7 @@ const useHome = () => {
         name: patientInfo.name,
         age: patientInfo.age,
         gender: patientInfo.gender,
+        image: patientInfo.image,
       },
     });
   };

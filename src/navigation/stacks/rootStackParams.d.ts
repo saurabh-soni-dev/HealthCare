@@ -6,6 +6,7 @@ export type RootStackParams = {
       name: string;
       age: number;
       gender: string;
+      image: string;
     };
   };
   Notification: undefined;
@@ -15,6 +16,7 @@ export type RootStackParams = {
       name: string;
       age: number;
       gender: string;
+      image: string;
     };
   };
 };

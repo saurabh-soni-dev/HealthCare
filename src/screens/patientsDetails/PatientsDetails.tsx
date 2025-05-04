@@ -5,13 +5,14 @@ import {DiagnosticsCard, LeftCard, RightCard} from '../../components/cardIndex';
 import usePatientsDetails from './usePatientsDetails';
 
 const PatientsDetails: FC = () => {
-  const {styles, onPressBackIcon, patientName, navigateToDiagnosticsScreen} =
+  const {styles, onPressBackIcon, patientInfo, navigateToDiagnosticsScreen} =
     usePatientsDetails();
+
   return (
     <View style={styles.container}>
       <CustomStatusBar />
       <CustomHeader
-        title={patientName}
+        title={patientInfo?.name}
         subTitle="Action Plan"
         onBack={onPressBackIcon}
       />
@@ -37,16 +38,16 @@ const PatientsDetails: FC = () => {
         </View>
         <View style={styles.rightColumn}>
           <RightCard
-            nameOfDoctor="Dr. Brooklyn Simmons"
-            imageOfDoctor="https://randomuser.me/api/portraits/women/5.jpg"
+            nameOfDoctor={patientInfo?.name}
+            imageOfDoctor={patientInfo?.image}
             type="Full Brain"
             body="MRI"
             num="24.08"
             exray="https://randomuser.me/api/portraits/women/8.jpg"
           />
           <RightCard
-            nameOfDoctor="Dr. Brooklyn Simmons"
-            imageOfDoctor="https://randomuser.me/api/portraits/women/0.jpg"
+            nameOfDoctor={patientInfo?.name}
+            imageOfDoctor={patientInfo?.image}
             type="Cardiogram"
             body="Heart"
             num="28.10"
