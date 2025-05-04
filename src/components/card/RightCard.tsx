@@ -73,12 +73,13 @@ export default RightCard;
 
 const createStyles = (colors: any) => ({
   card: {
-    height: verticalScale(260),
+    height: verticalScale(270),
     width: '100%',
     backgroundColor: colors.card,
     borderRadius: 20,
     padding: verticalScale(15),
     marginBottom: verticalScale(10),
+    justifyContent: 'space-between',
   } as ViewStyle,
 
   headerRow: {
@@ -109,9 +110,7 @@ const createStyles = (colors: any) => ({
     borderRadius: 10,
   } as ImageStyle,
 
-  textGroup: {
-    marginTop: verticalScale(20),
-  } as ViewStyle,
+  textGroup: {} as ViewStyle,
 
   type: {
     fontSize: scaleFont(14),
@@ -133,7 +132,6 @@ const createStyles = (colors: any) => ({
   } as TextStyle,
 
   xrayContainer: {
-    marginTop: verticalScale(20),
     backgroundColor: colors.border,
     height: verticalScale(80),
     borderRadius: 20,

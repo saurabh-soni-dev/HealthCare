@@ -111,12 +111,13 @@ export default LeftCard;
 
 const createStyles = (colors: any) => ({
   card: {
-    height: verticalScale(360),
+    height: verticalScale(380),
     width: '100%',
     backgroundColor: colors.border,
     borderRadius: 20,
     padding: verticalScale(15),
     marginTop: verticalScale(10),
+    justifyContent: 'space-between',
   } as ViewStyle,
 
   headerRow: {
@@ -133,7 +134,6 @@ const createStyles = (colors: any) => ({
   } as TextStyle,
 
   typeGroup: {
-    marginTop: verticalScale(20),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -163,7 +163,6 @@ const createStyles = (colors: any) => ({
   } as TextStyle,
 
   xrayContainer: {
-    marginTop: verticalScale(20),
     backgroundColor: colors.border,
     height: verticalScale(80),
     borderRadius: 20,
