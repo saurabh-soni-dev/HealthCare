@@ -36,7 +36,7 @@ export default IconButon;
 
 const styles = StyleSheet.create({
   button: {
-    padding: verticalScale(18),
+    padding: verticalScale(16),
     backgroundColor: '#E5E7EB',
     borderRadius: 30,
     justifyContent: 'center',

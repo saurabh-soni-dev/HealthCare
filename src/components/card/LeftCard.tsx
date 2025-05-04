@@ -58,13 +58,13 @@ const LeftCard: FC<LeftCardProps> = ({
 
       <View style={styles.typeGroup}>
         <View style={styles.textGroup}>
-          <Text allowFontScaling={false} numberOfLines={2} style={styles.type}>
+          <Text allowFontScaling={false} numberOfLines={1} style={styles.type}>
             {type}
           </Text>
-          <Text allowFontScaling={false} numberOfLines={2} style={styles.body}>
+          <Text allowFontScaling={false} numberOfLines={1} style={styles.body}>
             {body}
           </Text>
-          <Text allowFontScaling={false} numberOfLines={2} style={styles.num}>
+          <Text allowFontScaling={false} numberOfLines={1} style={styles.num}>
             {num}
           </Text>
         </View>
@@ -78,13 +78,13 @@ const LeftCard: FC<LeftCardProps> = ({
 
       <View style={styles.typeGroup}>
         <View style={styles.textGroup}>
-          <Text allowFontScaling={false} numberOfLines={2} style={styles.type}>
+          <Text allowFontScaling={false} numberOfLines={1} style={styles.type}>
             {type1}
           </Text>
-          <Text allowFontScaling={false} numberOfLines={2} style={styles.body}>
+          <Text allowFontScaling={false} numberOfLines={1} style={styles.body}>
             {body1}
           </Text>
-          <Text allowFontScaling={false} numberOfLines={2} style={styles.num}>
+          <Text allowFontScaling={false} numberOfLines={1} style={styles.num}>
             {num1}
           </Text>
         </View>
@@ -139,7 +139,9 @@ const createStyles = (colors: any) => ({
     justifyContent: 'space-between',
   } as ViewStyle,
 
-  textGroup: {} as ViewStyle,
+  textGroup: {
+    width: '60%',
+  } as ViewStyle,
 
   type: {
     fontSize: scaleFont(14),
