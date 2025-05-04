@@ -94,6 +94,7 @@ export const createStyles = (colors: any) => ({
     fontFamily: font.openSansRegular,
     color: colors.text,
     marginTop: verticalScale(3),
+    textTransform: 'capitalize',
   } as TextStyle,
 
   imageStyle: {

@@ -38,9 +38,13 @@ const useHome = () => {
   // function end: navigateToAddPatientsScreen
 
   // function start: navigateToPatientsScreen
-  const navigateToPatientsScreen = (patientName: string) => {
+  const navigateToPatientsScreen = (patientInfo: Patient) => {
     navigation.navigate('PatientsDetails', {
-      patientName: patientName,
+      patientDetails: {
+        name: patientInfo.name,
+        age: patientInfo.age,
+        gender: patientInfo.gender,
+      },
     });
   };
   // function end: navigateToPatientsScreen

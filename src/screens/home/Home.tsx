@@ -56,7 +56,7 @@ const Home: FC = () => {
               <PatientCard
                 key={index}
                 item={item}
-                onPress={() => navigateToPatientsScreen(item.name)}
+                onPress={() => navigateToPatientsScreen(item)}
                 onPressEdit={() => onPressEdit(item.name)}
               />
             )}

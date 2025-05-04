@@ -111,7 +111,7 @@ export default LeftCard;
 
 const createStyles = (colors: any) => ({
   card: {
-    height: verticalScale(380),
+    height: verticalScale(410),
     width: '100%',
     backgroundColor: colors.border,
     borderRadius: 20,

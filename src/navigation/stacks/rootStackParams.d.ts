@@ -2,9 +2,19 @@ export type RootStackParams = {
   Splash: undefined;
   HomeTabs: undefined;
   PatientsDetails: {
-    patientName: string;
+    patientDetails: {
+      name: string;
+      age: number;
+      gender: string;
+    };
   };
   Notification: undefined;
   AddPatients: undefined;
-  Diagnostics: undefined;
+  Diagnostics: {
+    patientDetails: {
+      name: string;
+      age: number;
+      gender: string;
+    };
+  };
 };

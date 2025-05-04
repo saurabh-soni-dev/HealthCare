@@ -15,10 +15,10 @@ const usePatientsDetails = () => {
 
   useFocusEffect(
     useCallback(() => {
-      if (params?.patientName) {
-        setPatientName(params?.patientName);
+      if (params?.patientDetails) {
+        setPatientName(params?.patientDetails.name);
       }
-    }, [params?.patientName]),
+    }, [params]),
   );
 
   const onPressBackIcon = () => {
@@ -26,7 +26,9 @@ const usePatientsDetails = () => {
   };
   // function start: navigateToAddPatientsScreen
   const navigateToDiagnosticsScreen = () => {
-    navigation.navigate('Diagnostics');
+    navigation.navigate('Diagnostics', {
+      patientDetails: params.patientDetails,
+    });
   };
   // function end: navigateToAddPatientsScreen
 

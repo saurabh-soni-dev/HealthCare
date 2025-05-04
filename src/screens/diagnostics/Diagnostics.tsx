@@ -1,18 +1,18 @@
 import React, {FC} from 'react';
 import {Image, View} from 'react-native';
+import imageIndex from '../../assets/imageIndex';
 import {
   CustomHeader,
   CustomStatusBar,
   CustomText,
   TextButton,
 } from '../../components';
-import useDiagnostics from './useDiagnostics';
 import {CounterCard, DiagnosticsCard} from '../../components/cardIndex';
 import {iconName} from '../../utility';
-import imageIndex from '../../assets/imageIndex';
+import useDiagnostics from './useDiagnostics';
 
 const Diagnostics: FC = () => {
-  const {styles, colors, onPressBackIcon} = useDiagnostics();
+  const {styles, colors, onPressBackIcon, patientInfo} = useDiagnostics();
 
   return (
     <View style={styles.screenContainer}>
@@ -23,17 +23,19 @@ const Diagnostics: FC = () => {
           <View style={styles.planCard}>
             <View style={styles.planCardRow}>
               <CustomText
-                text="Treatment Plan"
+                text={'Treatment Plan'}
                 numberOfLines={2}
                 style={styles.planText}
               />
               <CustomText
-                text="Brooklyn Simmons"
+                text={patientInfo?.name ?? 'Brooklyn Simmons'}
                 numberOfLines={2}
                 style={styles.nameText}
               />
               <CustomText
-                text="Female 28"
+                text={`${patientInfo?.gender ?? 'Female'}, ${
+                  patientInfo?.age ?? 28
+                }`}
                 numberOfLines={1}
                 style={styles.ageText}
               />
