@@ -61,7 +61,8 @@ export const createStyles = (colors: any) => ({
   } as TextStyle,
 
   darkTheme: {
-    paddingVertical: verticalScale(50),
+    paddingTop: verticalScale(50),
+    paddingBottom: verticalScale(15),
     paddingHorizontal: horizontalScale(20),
     flexDirection: 'row',
     alignItems: 'center',
@@ -73,4 +74,15 @@ export const createStyles = (colors: any) => ({
     color: colors.text,
     fontFamily: font.openSansRegular,
   } as TextStyle,
+
+  listContent: {
+    flexGrow: 1,
+    rowGap: verticalScale(15),
+    paddingHorizontal: horizontalScale(20),
+    paddingTop: verticalScale(50),
+  } as ViewStyle,
+
+  listFooterSpacing: {
+    marginBottom: verticalScale(80),
+  } as ViewStyle,
 });

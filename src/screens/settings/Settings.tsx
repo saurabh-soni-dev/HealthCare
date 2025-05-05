@@ -1,13 +1,14 @@
 import React, {FC} from 'react';
-import {Image, Switch, TouchableHighlight, View} from 'react-native';
+import {FlatList, Image, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {CustomStatusBar, CustomText} from '../../components';
+import {SettingCard} from '../../components/cardIndex';
 import {LGColor, LGDarkColor} from '../../theme';
 import info from '../../utility/userInfo.json';
 import useSettings from './useSettings';
 
 const Settings: FC = () => {
-  const {styles, isDark, toggleTheme, colors} = useSettings();
+  const {styles, isDark, toggleTheme, settings} = useSettings();
 
   return (
     <View style={styles.screenContainer}>
@@ -32,19 +33,24 @@ const Settings: FC = () => {
           </View>
         </View>
       </LinearGradient>
-      <View style={styles.darkTheme}>
-        <CustomText text={'Dark theme'} style={styles.darkThemeText} />
-        <TouchableHighlight>
-          <Switch
-            value={isDark}
-            onValueChange={toggleTheme}
-            trackColor={{false: colors.text, true: colors.text}}
-            thumbColor={isDark ? colors.primary : colors.background}
-            ios_backgroundColor={colors.text}
-            disabled={false}
+      <FlatList
+        data={settings}
+        keyExtractor={(_, index) => `${index}`}
+        renderItem={({item, index}) => (
+          <SettingCard
+            item={item}
+            index={index}
+            onPress={() => {}}
+            isDark={isDark}
+            onChangeTheme={toggleTheme}
           />
-        </TouchableHighlight>
-      </View>
+        )}
+        contentContainerStyle={styles.listContent}
+        showsVerticalScrollIndicator={false}
+        ListFooterComponent={<View style={styles.listFooterSpacing} />}
+        keyboardDismissMode="on-drag"
+        initialNumToRender={7}
+      />
     </View>
   );
 };

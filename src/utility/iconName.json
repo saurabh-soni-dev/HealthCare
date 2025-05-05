@@ -9,5 +9,12 @@
     "edit":"pencil-outline",
     "back":"chevron-back-outline",
     "document":"document-outline",
-    "heart":"heart-dislike-circle-outline"
+    "heart":"heart-dislike-circle-outline",
+    "rightArrow":"arrow-forward-outline",
+    "language":"globe-outline",
+    "theme":"moon-outline",
+    "privacy":"shield-outline",
+    "terms":"reader-outline",
+    "about":"help-circle-outline",
+    "logout":"log-out-outline"
 }
