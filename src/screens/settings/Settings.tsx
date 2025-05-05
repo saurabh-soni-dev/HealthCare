@@ -8,7 +8,13 @@ import info from '../../utility/userInfo.json';
 import useSettings from './useSettings';
 
 const Settings: FC = () => {
-  const {styles, isDark, toggleTheme, settings} = useSettings();
+  const {
+    styles,
+    isDark,
+    toggleTheme,
+    settings,
+    navigateToSettingDetailsScreen,
+  } = useSettings();
 
   return (
     <View style={styles.screenContainer}>
@@ -40,7 +46,7 @@ const Settings: FC = () => {
           <SettingCard
             item={item}
             index={index}
-            onPress={() => {}}
+            onPress={name => navigateToSettingDetailsScreen(name)}
             isDark={isDark}
             onChangeTheme={toggleTheme}
           />

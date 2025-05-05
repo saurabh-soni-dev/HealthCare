@@ -19,4 +19,7 @@ export type RootStackParams = {
       image: string;
     };
   };
+  SettingDetails: {
+    flag: string;
+  };
 };

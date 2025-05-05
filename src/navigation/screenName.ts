@@ -6,4 +6,5 @@ export default {
   notification: 'Notification',
   addPatients: 'AddPatients',
   diagnostics: 'Diagnostics',
+  settingDetails: 'SettingDetails',
 };

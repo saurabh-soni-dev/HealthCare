@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {useSettingsContext} from '../../i18n/SettingsContext';
 import {iconName} from '../../utility';
 import {createStyles} from './settings.style';
+import {useAuthNavigation} from '../../hooks/useAppNavigation';
 
 interface SettingsItem {
   id: number;
@@ -15,6 +16,7 @@ export type SettingsSection = {
 };
 
 const useSettings = () => {
+  const navigation = useAuthNavigation();
   const {toggleTheme, isDark, theme} = useSettingsContext();
   const {colors} = theme;
   const styles = createStyles(colors);
@@ -41,19 +43,19 @@ const useSettings = () => {
       title: 'Legal',
       data: [
         {
-          id: 1,
+          id: 3,
           name: 'Privacy Policy',
           icon: iconName.privacy,
           navigation: 'PrivacyPolicy',
         },
         {
-          id: 2,
+          id: 4,
           name: 'Terms of Service',
           icon: iconName.terms,
           navigation: 'TermsOfService',
         },
         {
-          id: 3,
+          id: 5,
           name: 'About the App',
           icon: iconName.about,
           navigation: 'AboutApp',
@@ -61,10 +63,10 @@ const useSettings = () => {
       ],
     },
     {
-      title: 'About & Account',
+      title: 'Account',
       data: [
         {
-          id: 1,
+          id: 6,
           name: 'Logout',
           icon: iconName.logout,
           navigation: 'Logout',
@@ -73,7 +75,22 @@ const useSettings = () => {
     },
   ]);
 
-  return {styles, isDark, toggleTheme, colors, settings};
+  const navigateToSettingDetailsScreen = (flag: string) => {
+    if (flag !== 'Logout') {
+      navigation.navigate('SettingDetails', {
+        flag: flag,
+      });
+    }
+  };
+
+  return {
+    styles,
+    isDark,
+    toggleTheme,
+    colors,
+    settings,
+    navigateToSettingDetailsScreen,
+  };
 };
 
 export default useSettings;

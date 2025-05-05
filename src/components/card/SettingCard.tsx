@@ -20,7 +20,7 @@ import {font} from '../../theme';
 interface SettingCardProps {
   item: any;
   index: number;
-  onPress: () => void;
+  onPress: (name: string) => void;
   isDark: boolean;
   onChangeTheme: () => void;
 }
@@ -40,7 +40,7 @@ const SettingCard: FC<SettingCardProps> = ({
       {item?.data?.map((setting: any, i: number) => (
         <TouchableHighlight
           key={setting.id}
-          onPress={onPress}
+          onPress={() => onPress(setting.name)}
           style={styles.highlightRow}
           underlayColor={theme.colors.border}>
           <View style={[styles.settingCard, i !== 0 && styles.devider]}>
