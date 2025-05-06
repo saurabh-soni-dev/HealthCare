@@ -8,4 +8,5 @@ export default {
   diagnostics: 'Diagnostics',
   settingDetails: 'SettingDetails',
   login: 'Login',
+  signup: 'Signup',
 };

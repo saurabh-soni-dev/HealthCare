@@ -16,6 +16,10 @@ const useLogin = () => {
     navigation.navigate('HomeTabs');
   };
 
+  const navigateToSignupScreen = () => {
+    navigation.navigate('Signup');
+  };
+
   return {
     styles,
     phoneNumer,
@@ -23,6 +27,7 @@ const useLogin = () => {
     password,
     setPassword,
     navigateToHomeScreen,
+    navigateToSignupScreen,
   };
 };
 

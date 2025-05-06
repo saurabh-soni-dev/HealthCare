@@ -17,6 +17,7 @@ const Login: FC = () => {
     password,
     setPassword,
     navigateToHomeScreen,
+    navigateToSignupScreen,
   } = useLogin();
 
   return (
@@ -71,9 +72,7 @@ const Login: FC = () => {
         <View style={styles.sectionTwo}>
           <Text style={styles.registerText}>
             If you don't have credentials!{'  '}
-            <Text
-              onPress={() => console.log('signup')}
-              style={styles.signupText}>
+            <Text onPress={navigateToSignupScreen} style={styles.signupText}>
               Signup
             </Text>
           </Text>

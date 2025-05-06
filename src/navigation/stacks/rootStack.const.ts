@@ -4,6 +4,7 @@ import Login from '../../screens/login/Login';
 import Notification from '../../screens/notification/Notification';
 import PatientsDetails from '../../screens/patientsDetails/PatientsDetails';
 import SettingDetails from '../../screens/settingDetails/SettingDetails';
+import Signup from '../../screens/signup/Signup';
 import Splash from '../../screens/splash/Splash';
 import HomeTabs from '../bottomTab/HomeTabs';
 
@@ -16,4 +17,5 @@ export const stackScreens = [
   {name: 'Diagnostics', component: Diagnostics},
   {name: 'SettingDetails', component: SettingDetails},
   {name: 'Login', component: Login},
+  {name: 'Signup', component: Signup},
 ];

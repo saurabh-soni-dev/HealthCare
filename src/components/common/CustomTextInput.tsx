@@ -20,7 +20,7 @@ interface CustomTextInputProps {
   onChangeText?: (text: string) => void;
   secureTextEntry?: boolean;
   keyboardType?: KeyboardTypeOptions;
-  maxLength: number;
+  maxLength?: number;
   returnKeyType?: 'done' | 'go' | 'next' | 'search' | 'send';
 }
 
