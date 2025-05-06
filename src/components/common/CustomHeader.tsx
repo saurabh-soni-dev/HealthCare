@@ -16,6 +16,7 @@ interface CustomHeaderProps {
   onBack: () => void;
   isDocButton?: boolean;
   onPressDoc?: () => void;
+  containerStyle?: ViewStyle;
 }
 const CustomHeader: FC<CustomHeaderProps> = ({
   title,
@@ -23,12 +24,13 @@ const CustomHeader: FC<CustomHeaderProps> = ({
   onBack,
   isDocButton,
   onPressDoc,
+  containerStyle,
 }) => {
   const {theme} = useSettingsContext();
   const styles = createStyles(theme.colors);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {...containerStyle}]}>
       <View style={styles.row}>
         <IconButon
           iconName={iconName.back}

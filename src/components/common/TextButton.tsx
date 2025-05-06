@@ -16,6 +16,7 @@ interface TextButtonProps {
   disabled?: boolean;
   isLoading?: boolean;
   buttonStyle?: ViewStyle;
+  titleStyle?: TextStyle;
 }
 
 const TextButton: FC<TextButtonProps> = ({
@@ -24,6 +25,7 @@ const TextButton: FC<TextButtonProps> = ({
   disabled,
   isLoading,
   buttonStyle,
+  titleStyle,
 }) => {
   const {theme} = useSettingsContext();
   const styles = createStyles(theme.colors);
@@ -36,7 +38,10 @@ const TextButton: FC<TextButtonProps> = ({
       {isLoading ? (
         <ActivityIndicator size={'small'} color={'#111111'} />
       ) : (
-        <Text allowFontScaling={false} numberOfLines={1} style={styles.title}>
+        <Text
+          allowFontScaling={false}
+          numberOfLines={1}
+          style={[styles.title, {...titleStyle}]}>
           {title}
         </Text>
       )}

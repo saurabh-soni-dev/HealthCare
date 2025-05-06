@@ -7,19 +7,22 @@ interface CustomTextProps {
   style?: TextStyle;
   allowFontScaling?: boolean;
   numberOfLines?: number;
+  onPress?: () => void;
 }
 const CustomText: FC<CustomTextProps> = ({
   text,
   style,
   allowFontScaling = false,
   numberOfLines = 1,
+  onPress,
 }) => {
   const {theme} = useSettingsContext();
   return (
     <Text
       style={{color: theme.colors.text, ...style}}
       allowFontScaling={allowFontScaling}
-      numberOfLines={numberOfLines}>
+      numberOfLines={numberOfLines}
+      onPress={onPress}>
       {text}
     </Text>
   );

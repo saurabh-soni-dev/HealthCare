@@ -7,4 +7,5 @@ export default {
   addPatients: 'AddPatients',
   diagnostics: 'Diagnostics',
   settingDetails: 'SettingDetails',
+  login: 'Login',
 };

@@ -1,5 +1,6 @@
 import AddPatients from '../../screens/addPatients/AddPatients';
 import Diagnostics from '../../screens/diagnostics/Diagnostics';
+import Login from '../../screens/login/Login';
 import Notification from '../../screens/notification/Notification';
 import PatientsDetails from '../../screens/patientsDetails/PatientsDetails';
 import SettingDetails from '../../screens/settingDetails/SettingDetails';
@@ -14,4 +15,5 @@ export const stackScreens = [
   {name: 'AddPatients', component: AddPatients},
   {name: 'Diagnostics', component: Diagnostics},
   {name: 'SettingDetails', component: SettingDetails},
+  {name: 'Login', component: Login},
 ];
