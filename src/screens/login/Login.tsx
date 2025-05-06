@@ -30,7 +30,7 @@ const Login: FC = () => {
             <Image source={imageIndex.logo} style={styles.imageStyle} />
           </View>
           <Text style={styles.nameStyle}>
-            Welcome! {'\n'}to <Text style={styles.hlcStyle}>HLC.io</Text>
+            Welcome! {'\n'}to <Text style={styles.hlcStyle}>HELC.io</Text>
           </Text>
         </View>
         <View style={styles.sectionOne}>

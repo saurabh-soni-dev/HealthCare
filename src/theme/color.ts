@@ -1,19 +1,19 @@
 export const lightTheme = {
-  primary: '#173da6', // purple
-  background: '#FFFFFF', // white
-  card: '#F5F5F5', // offWhite
-  text: '#111111', // black
-  border: '#E5E7EB', // lightGray
-  notification: '#F59E0B', // warning
+  primary: '#2563EB', // Better contrast, slightly deeper blue
+  background: '#FFFFFF', // White
+  card: '#F3F4F6', // Light gray for separation
+  text: '#111827', // Soft black for readability
+  border: '#E5E7EB', // Subtle visible border
+  notification: '#F59E0B', // Warning color
 };
 
 export const darkTheme = {
-  primary: '#173da6', // purple
-  background: '#111111', // black
-  card: '#1F1F1F', // slightly lighter black
-  text: '#FFFFFF', // white
-  border: '#6B7280', // darkGray
-  notification: '#F59E0B', // warning
+  primary: '#3B82F6', // Bright blue for dark background
+  background: '#0B1120', // True dark navy
+  card: '#1E293B', // Dark slate card
+  text: '#E5E7EB', // Light gray text
+  border: '#334155', // Subtle dark border
+  notification: '#FBBF24', // Warning color
 };
 
 export const LGColor = [

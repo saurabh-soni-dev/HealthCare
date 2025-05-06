@@ -21,7 +21,7 @@ const IconButon: FC<IconButonProps> = ({
   return (
     <TouchableHighlight
       onPress={onPress}
-      underlayColor={'#6B7280'}
+      underlayColor={'rgba(0,0,0,0.1)'}
       style={[styles.button, {...style}]}>
       <Icon
         name={iconName}

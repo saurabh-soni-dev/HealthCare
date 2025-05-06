@@ -34,7 +34,8 @@ const TextButton: FC<TextButtonProps> = ({
     <TouchableHighlight
       onPress={onPress}
       disabled={disabled}
-      style={[styles.button, buttonStyle]}>
+      style={[styles.button, buttonStyle]}
+      underlayColor={'rgba(0,0,0,0.1)'}>
       {isLoading ? (
         <ActivityIndicator size={'small'} color={'#111111'} />
       ) : (
@@ -57,7 +58,7 @@ const createStyles = (colors: any) => ({
     backgroundColor: colors.notification,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 25,
+    borderRadius: 100,
   } as ViewStyle,
 
   title: {

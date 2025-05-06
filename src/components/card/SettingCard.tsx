@@ -42,7 +42,7 @@ const SettingCard: FC<SettingCardProps> = ({
           key={setting.id}
           onPress={() => onPress(setting.name)}
           style={styles.highlightRow}
-          underlayColor={theme.colors.border}>
+          underlayColor={'rgba(0,0,0,0.1)'}>
           <View style={[styles.settingCard, i !== 0 && styles.devider]}>
             <View style={styles.settingIconRow}>
               <View style={styles.settingIconView}>

@@ -40,7 +40,7 @@ export const createStyles = (colors: any, isDark: boolean) => ({
   } as ImageStyle,
 
   nameStyle: {
-    marginTop: verticalScale(20),
+    marginTop: verticalScale(10),
     fontSize: scaleFont(28),
     fontFamily: font.openSansSemiBold,
     color: colors.text,
@@ -70,7 +70,7 @@ export const createStyles = (colors: any, isDark: boolean) => ({
 
   loginButton: {
     marginTop: verticalScale(10),
-    height: verticalScale(65),
+    height: verticalScale(60),
     width: '70%',
     alignSelf: 'center',
     backgroundColor: colors.primary,
