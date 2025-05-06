@@ -76,12 +76,13 @@ const CustomTextInput: FC<CustomTextInputProps> = ({
           allowFontScaling={false}
           maxLength={maxLength}
           returnKeyType={returnKeyType}
+          numberOfLines={1}
         />
       </View>
       <TouchableOpacity onPress={togglePassword}>
         <Icon
           name={passwordIcon}
-          size={scaleFont(20)}
+          size={scaleFont(22)}
           color={isFocused ? colors.primary : colors.text}
         />
       </TouchableOpacity>
@@ -92,7 +93,7 @@ const CustomTextInput: FC<CustomTextInputProps> = ({
 const getStyles = (colors: Record<string, string>, isFocused: boolean) =>
   StyleSheet.create({
     container: {
-      backgroundColor: colors.border,
+      backgroundColor: colors.card,
       marginBottom: verticalScale(15),
       padding: verticalScale(15),
       paddingRight: verticalScale(20),
@@ -107,12 +108,12 @@ const getStyles = (colors: Record<string, string>, isFocused: boolean) =>
       flex: 1,
     },
     label: {
-      fontSize: scaleFont(12),
+      fontSize: scaleFont(14),
       fontFamily: font.openSansLight,
       color: colors.text,
     },
     textInput: {
-      marginTop: verticalScale(5),
+      marginTop: verticalScale(3),
       fontSize: scaleFont(16),
       fontFamily: font.openSansSemiBold,
       color: colors.text,

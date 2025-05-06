@@ -10,7 +10,14 @@ import {
 import useLogin from './useLogin';
 
 const Login: FC = () => {
-  const {styles, phoneNumer, setPhoneNumer, password, setPassword} = useLogin();
+  const {
+    styles,
+    phoneNumer,
+    setPhoneNumer,
+    password,
+    setPassword,
+    navigateToHomeScreen,
+  } = useLogin();
 
   return (
     <KeyboardAvoidingView
@@ -50,7 +57,7 @@ const Login: FC = () => {
           />
           <TextButton
             title="Login"
-            onPress={() => {}}
+            onPress={navigateToHomeScreen}
             buttonStyle={styles.loginButton}
             titleStyle={styles.loginButtonText}
           />
