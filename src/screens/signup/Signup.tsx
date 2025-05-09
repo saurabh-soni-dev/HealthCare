@@ -125,6 +125,7 @@ const Signup: FC = () => {
           value={address}
           onChangeText={text => setAddress(text)}
           keyboardType="default"
+          returnKeyType="go"
           maxLength={180}
           multiline={true}
           numberOfLines={5}
