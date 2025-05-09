@@ -1,12 +1,7 @@
 import React, {FC} from 'react';
 import {Image, KeyboardAvoidingView, Platform, Text, View} from 'react-native';
 import imageIndex from '../../assets/imageIndex';
-import {
-  CustomStatusBar,
-  CustomText,
-  CustomTextInput,
-  TextButton,
-} from '../../components';
+import {CustomStatusBar, CustomTextInput, TextButton} from '../../components';
 import useLogin from './useLogin';
 
 const Login: FC = () => {
@@ -18,6 +13,7 @@ const Login: FC = () => {
     setPassword,
     navigateToHomeScreen,
     navigateToSignupScreen,
+    navigateToForgotPasswordScreen,
   } = useLogin();
 
   return (
@@ -62,19 +58,18 @@ const Login: FC = () => {
             buttonStyle={styles.loginButton}
             titleStyle={styles.loginButtonText}
           />
-
-          <CustomText
-            text="I forgot my password"
-            style={styles.forgotPassword}
-            onPress={() => console.log('signup')}
-          />
         </View>
         <View style={styles.sectionTwo}>
+          <Text
+            onPress={navigateToForgotPasswordScreen}
+            style={styles.forgotPassText}>
+            Forgot Password ?
+          </Text>
           <Text style={styles.registerText}>
             If you don't have credentials!{'  '}
             <Text onPress={navigateToSignupScreen} style={styles.signupText}>
               Signup
-            </Text>
+            </Text>{' '}
           </Text>
         </View>
       </View>

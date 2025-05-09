@@ -4,6 +4,7 @@ import CustomText from './common/CustomText';
 import IconButon from './common/IconButon';
 import TextButton from './common/TextButton';
 import CustomTextInput from './common/CustomTextInput';
+import ListModal from './common/ListModal';
 
 export {
   CustomHeader,
@@ -12,4 +13,5 @@ export {
   IconButon,
   TextButton,
   CustomTextInput,
+  ListModal,
 };

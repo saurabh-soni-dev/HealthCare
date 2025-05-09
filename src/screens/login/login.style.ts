@@ -55,10 +55,18 @@ export const createStyles = (colors: any, isDark: boolean) => ({
   } as TextStyle,
 
   registerText: {
-    marginTop: verticalScale(60),
+    marginTop: verticalScale(5),
     fontSize: scaleFont(16),
     fontFamily: font.openSansRegular,
     color: colors.text,
+    textAlign: 'center',
+  } as TextStyle,
+
+  forgotPassText: {
+    marginTop: verticalScale(35),
+    fontSize: scaleFont(16),
+    fontFamily: font.openSansBold,
+    color: isDark ? colors.notification : colors.primary,
     textAlign: 'center',
   } as TextStyle,
 

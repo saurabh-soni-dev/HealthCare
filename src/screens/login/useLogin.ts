@@ -20,6 +20,10 @@ const useLogin = () => {
     navigation.navigate('Signup');
   };
 
+  const navigateToForgotPasswordScreen = () => {
+    navigation.navigate('ForgotPassword');
+  };
+
   return {
     styles,
     phoneNumer,
@@ -28,6 +32,7 @@ const useLogin = () => {
     setPassword,
     navigateToHomeScreen,
     navigateToSignupScreen,
+    navigateToForgotPasswordScreen,
   };
 };
 

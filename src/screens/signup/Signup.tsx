@@ -1,22 +1,25 @@
+import moment from 'moment';
 import React, {FC} from 'react';
 import {
   Image,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
+  TouchableOpacity,
   View,
 } from 'react-native';
+import DatePicker from 'react-native-date-picker';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {
   CustomHeader,
   CustomStatusBar,
   CustomText,
   CustomTextInput,
+  ListModal,
   TextButton,
 } from '../../components';
-import useSignup from './useSignup';
-import {TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
 import {scaleFont} from '../../utility';
+import useSignup from './useSignup';
 
 const Signup: FC = () => {
   const {
@@ -36,11 +39,16 @@ const Signup: FC = () => {
     setAddress,
     profileImage,
     borderHighlight,
+    isDatePicker,
+    isGenderPicker,
+    setIsGenderPicker,
     navigateToLoginScreen,
     navigateToHomeScreen,
     handleFocused,
+    selectProfileImage,
+    datePickerHandler,
+    genderPickerHandler,
   } = useSignup();
-
   return (
     <KeyboardAvoidingView
       style={styles.container}
@@ -84,6 +92,9 @@ const Signup: FC = () => {
           onChangeText={text => setDateOfBirth(text)}
           keyboardType="default"
           maxLength={15}
+          editable={false}
+          isButton={true}
+          onPress={datePickerHandler}
         />
         <CustomTextInput
           label="Gender"
@@ -93,6 +104,9 @@ const Signup: FC = () => {
           onChangeText={text => setGender(text)}
           keyboardType="default"
           maxLength={6}
+          editable={false}
+          isButton={true}
+          onPress={genderPickerHandler}
         />
         <CustomTextInput
           label="Phone number"
@@ -111,15 +125,42 @@ const Signup: FC = () => {
           value={address}
           onChangeText={text => setAddress(text)}
           keyboardType="default"
-          maxLength={10}
-          returnKeyType="done"
+          maxLength={180}
+          multiline={true}
+          numberOfLines={5}
+        />
+        <DatePicker
+          date={new Date()}
+          modal
+          open={isDatePicker}
+          mode="date"
+          onConfirm={(res: Date) =>
+            setDateOfBirth(moment(res?.toString()).format('D MMM YYYY'))
+          }
+          onCancel={datePickerHandler}
+          theme={'light'}
+          cancelText="Cancel"
+          confirmText="Confirm"
+          buttonColor={colors.primary}
+          dividerColor={colors.primary}
+          maximumDate={new Date()}
+        />
+        <ListModal
+          visible={isGenderPicker}
+          options={['Male', 'Female']}
+          onClose={() => genderPickerHandler()}
+          onSelect={gen => {
+            setGender(gen);
+            setIsGenderPicker(false);
+          }}
         />
         <View style={styles.profileImageView}>
           <TouchableOpacity
             style={styles.uploadButton}
             activeOpacity={0.8}
             onPressIn={handleFocused}
-            onPressOut={handleFocused}>
+            onPressOut={handleFocused}
+            onPress={selectProfileImage}>
             <CustomText text="Profile image" style={styles.uploadButtonText} />
             <Icon
               name={'cloud-upload'}
@@ -128,10 +169,11 @@ const Signup: FC = () => {
             />
           </TouchableOpacity>
           <View style={styles.imagePreview}>
-            {!profileImage ? (
+            {profileImage ? (
               <Image
-                source={{uri: 'https://randomuser.me/api/portraits/men/6.jpg'}}
+                source={{uri: profileImage}}
                 style={styles.profileImage}
+                resizeMode="cover"
               />
             ) : (
               <CustomText

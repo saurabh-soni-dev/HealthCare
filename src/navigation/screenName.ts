@@ -9,4 +9,5 @@ export default {
   settingDetails: 'SettingDetails',
   login: 'Login',
   signup: 'Signup',
+  forgotPassword: 'ForgotPassword',
 };

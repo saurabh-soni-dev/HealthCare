@@ -2,6 +2,7 @@ export type RootStackParams = {
   Splash: undefined;
   Login: undefined;
   Signup: undefined;
+  ForgotPassword: undefined;
   HomeTabs: undefined;
   PatientsDetails: {
     patientDetails: {

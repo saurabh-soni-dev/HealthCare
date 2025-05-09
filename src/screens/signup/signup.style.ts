@@ -50,6 +50,7 @@ export const createStyles = (
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginBottom: verticalScale(15),
   } as ViewStyle,
 
   uploadButton: {
