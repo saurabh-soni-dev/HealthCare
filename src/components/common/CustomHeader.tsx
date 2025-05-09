@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {Text, TextStyle, View, ViewStyle} from 'react-native';
 import {useSettingsContext} from '../../i18n/SettingsContext';
-import {font} from '../../theme';
+import {darkTheme, font, lightTheme} from '../../theme';
 import {
   horizontalScale,
   iconName,
@@ -26,8 +26,8 @@ const CustomHeader: FC<CustomHeaderProps> = ({
   onPressDoc,
   containerStyle,
 }) => {
-  const {theme} = useSettingsContext();
-  const styles = createStyles(theme.colors);
+  const {theme, isDark} = useSettingsContext();
+  const styles = createStyles(theme.colors, isDark);
 
   return (
     <View style={[styles.container, {...containerStyle}]}>
@@ -69,11 +69,21 @@ const CustomHeader: FC<CustomHeaderProps> = ({
 
 export default CustomHeader;
 
-const createStyles = (colors: any) => ({
+const createStyles = (colors: any, isDark: boolean) => ({
   container: {
     paddingHorizontal: horizontalScale(20),
     paddingVertical: verticalScale(20),
     width: '100%',
+    backgroundColor: colors.background,
+    // Visual shadow only at the bottom
+    shadowColor: isDark ? darkTheme.text : lightTheme.text,
+    shadowOffset: {width: 0, height: 5},
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    borderBottomWidth: 0.3,
+    borderBottomColor: isDark ? lightTheme.text : darkTheme.text,
+    // Android shadow
+    elevation: 3,
   } as ViewStyle,
 
   row: {
