@@ -54,7 +54,7 @@ export default TextButton;
 
 const createStyles = (colors: any) => ({
   button: {
-    height: verticalScale(55),
+    height: verticalScale(50),
     backgroundColor: colors.notification,
     justifyContent: 'center',
     alignItems: 'center',

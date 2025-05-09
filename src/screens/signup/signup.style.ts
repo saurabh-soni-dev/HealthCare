@@ -14,7 +14,7 @@ export const createStyles = (
 
   mainContainer: {
     flex: 1,
-    padding: horizontalScale(20),
+    padding: verticalScale(20),
   } as ViewStyle,
 
   registerText: {
@@ -32,10 +32,9 @@ export const createStyles = (
   } as TextStyle,
 
   loginButton: {
-    marginTop: verticalScale(20),
-    marginBottom: verticalScale(30),
-    height: verticalScale(60),
-    width: '70%',
+    marginTop: verticalScale(15),
+    marginBottom: verticalScale(25),
+    width: '90%',
     alignSelf: 'center',
     backgroundColor: colors.primary,
   } as ViewStyle,
@@ -60,25 +59,27 @@ export const createStyles = (
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: isFocused ? 1 : 0,
-    borderColor: isFocused ? colors.primary : '',
+    borderWidth: isFocused ? 1 : 0.3,
+    borderColor: isFocused ? colors.primary : '#686e75',
   } as ViewStyle,
 
   uploadButtonText: {
     fontSize: scaleFont(14),
     fontFamily: font.openSansLight,
     color: colors.text,
-    marginBottom: verticalScale(10),
+    marginTop: verticalScale(5),
   } as TextStyle,
 
   imagePreview: {
     height: verticalScale(100),
     width: '48%',
     borderRadius: 10,
-    borderWidth: 1,
-    borderColor: colors.text,
+    borderWidth: 0.3,
+    borderColor: '#686e75',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: colors.card,
+    paddingHorizontal: horizontalScale(20),
   } as ViewStyle,
 
   profileImage: {

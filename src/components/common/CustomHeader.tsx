@@ -38,6 +38,7 @@ const CustomHeader: FC<CustomHeaderProps> = ({
           iconColor={theme.colors.card}
           onPress={onBack}
           style={styles.editButton}
+          underlayColor={theme.colors.primary}
         />
         <View style={styles.titleView}>
           <Text allowFontScaling={false} numberOfLines={1} style={styles.title}>
@@ -72,7 +73,7 @@ export default CustomHeader;
 const createStyles = (colors: any, isDark: boolean) => ({
   container: {
     paddingHorizontal: horizontalScale(20),
-    paddingVertical: verticalScale(20),
+    paddingVertical: verticalScale(15),
     width: '100%',
     backgroundColor: colors.background,
     // Visual shadow only at the bottom

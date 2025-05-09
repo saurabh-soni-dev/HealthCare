@@ -9,6 +9,7 @@ interface IconButonProps {
   style?: ViewStyle;
   iconColor?: string;
   iconSize?: number;
+  underlayColor?: string;
 }
 
 const IconButon: FC<IconButonProps> = ({
@@ -17,11 +18,12 @@ const IconButon: FC<IconButonProps> = ({
   style,
   iconColor,
   iconSize,
+  underlayColor,
 }) => {
   return (
     <TouchableHighlight
       onPress={onPress}
-      underlayColor={'rgba(0,0,0,0.1)'}
+      underlayColor={underlayColor ?? 'rgba(0,0,0,0.1)'}
       style={[styles.button, {...style}]}>
       <Icon
         name={iconName}

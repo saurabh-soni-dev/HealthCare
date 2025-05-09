@@ -161,11 +161,14 @@ const Signup: FC = () => {
             onPressIn={handleFocused}
             onPressOut={handleFocused}
             onPress={selectProfileImage}>
-            <CustomText text="Profile image" style={styles.uploadButtonText} />
             <Icon
               name={'cloud-upload'}
               size={scaleFont(22)}
               color={borderHighlight ? colors.primary : colors.text}
+            />
+            <CustomText
+              text="Upload profile image"
+              style={styles.uploadButtonText}
             />
           </TouchableOpacity>
           <View style={styles.imagePreview}>
@@ -177,8 +180,9 @@ const Signup: FC = () => {
               />
             ) : (
               <CustomText
-                text="Image preview!"
+                text="Preview of the uploaded image!"
                 style={styles.uploadButtonText}
+                numberOfLines={2}
               />
             )}
           </View>

@@ -10,7 +10,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useSettingsContext} from '../../i18n/SettingsContext';
 import {font} from '../../theme';
-import {scaleFont, verticalScale} from '../../utility';
+import {horizontalScale, scaleFont, verticalScale} from '../../utility';
 
 interface CustomTextInputProps {
   label: string;
@@ -142,14 +142,15 @@ const getStyles = (
     container: {
       backgroundColor: colors.card,
       marginBottom: verticalScale(15),
-      padding: verticalScale(15),
+      paddingHorizontal: horizontalScale(10),
+      paddingVertical: verticalScale(10),
       paddingRight: verticalScale(20),
       paddingBottom: verticalScale(18),
       borderRadius: 10,
       flexDirection: 'row',
       alignItems: 'center',
-      borderWidth: isFocused || borderHighlight ? 1 : 0,
-      borderColor: isFocused || borderHighlight ? colors.primary : '',
+      borderWidth: isFocused || borderHighlight ? 1 : 0.3,
+      borderColor: isFocused || borderHighlight ? colors.primary : '#686e75',
     },
     inputWrapper: {
       flex: 1,
@@ -160,16 +161,16 @@ const getStyles = (
       color: colors.text,
     },
     textInput: {
-      marginTop: verticalScale(3),
+      marginTop: verticalScale(2),
       fontSize: scaleFont(16),
       fontFamily: font.openSansSemiBold,
       color: colors.text,
       opacity: isFocused ? 1 : 0.8,
-      height: verticalScale(isMultiLine ? 100 : 22),
+      height: verticalScale(isMultiLine ? 80 : 20),
     },
 
     countView: {
-      marginTop: 15,
+      marginTop: verticalScale(15),
     },
 
     countText: {

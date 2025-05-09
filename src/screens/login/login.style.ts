@@ -78,7 +78,7 @@ export const createStyles = (colors: any, isDark: boolean) => ({
 
   loginButton: {
     marginTop: verticalScale(10),
-    height: verticalScale(60),
+    height: verticalScale(55),
     width: '70%',
     alignSelf: 'center',
     backgroundColor: colors.primary,
