@@ -27,6 +27,7 @@ interface CustomTextInputProps {
   editable?: boolean;
   isButton?: boolean;
   onPress?: () => void;
+  error?: string;
 }
 
 const CustomTextInput: FC<CustomTextInputProps> = ({
@@ -44,6 +45,7 @@ const CustomTextInput: FC<CustomTextInputProps> = ({
   isButton,
   onPress,
   editable,
+  error,
 }) => {
   const {theme} = useSettingsContext();
   const {colors} = theme;
@@ -73,62 +75,69 @@ const CustomTextInput: FC<CustomTextInputProps> = ({
   };
 
   return (
-    <TouchableOpacity
-      style={styles.container}
-      disabled={!isButton}
-      onPress={onPress}
-      activeOpacity={0.8}
-      onPressIn={handleFocused}
-      onPressOut={handleFocused}>
-      <View style={styles.inputWrapper}>
-        <Text allowFontScaling={false} numberOfLines={1} style={styles.label}>
-          {label}
-        </Text>
-        <TextInput
-          ref={inputRef}
-          style={styles.textInput}
-          placeholder={placeholder}
-          placeholderTextColor={colors.text}
-          onFocus={checkIsFocusedHandler}
-          onEndEditing={checkIsFocusedHandler}
-          secureTextEntry={isDisplayPass}
-          autoCorrect={false}
-          value={value}
-          onChangeText={onChangeText}
-          keyboardType={keyboardType}
-          allowFontScaling={false}
-          maxLength={maxLength}
-          returnKeyType={returnKeyType}
-          numberOfLines={numberOfLines ?? 1}
-          multiline={isMultiLine}
-          editable={editable}
-        />
-      </View>
-      <TouchableOpacity onPress={togglePassword} disabled={!isDisplayPass}>
-        <Icon
-          name={passwordIcon}
-          size={scaleFont(isFocused || borderHighlight ? 24 : 22)}
-          color={isFocused || borderHighlight ? colors.primary : colors.text}
-        />
-        {isMultiLine && (
-          <View style={styles.countView}>
-            <Text
-              allowFontScaling={false}
-              numberOfLines={1}
-              style={styles.countTextln}>
-              {value?.length}
-            </Text>
-            <View style={styles.divider} />
-            <Text
-              allowFontScaling={false}
-              numberOfLines={1}
-              style={styles.countText}>
-              {maxLength}
-            </Text>
-          </View>
-        )}
+    <View style={styles.root}>
+      <TouchableOpacity
+        style={styles.container}
+        disabled={!isButton}
+        onPress={onPress}
+        activeOpacity={0.8}
+        onPressIn={handleFocused}
+        onPressOut={handleFocused}>
+        <View style={styles.inputWrapper}>
+          <Text allowFontScaling={false} numberOfLines={1} style={styles.label}>
+            {label}
+          </Text>
+          <TextInput
+            ref={inputRef}
+            style={styles.textInput}
+            placeholder={placeholder}
+            placeholderTextColor={colors.text}
+            onFocus={checkIsFocusedHandler}
+            onEndEditing={checkIsFocusedHandler}
+            secureTextEntry={isDisplayPass}
+            autoCorrect={false}
+            value={value}
+            onChangeText={onChangeText}
+            keyboardType={keyboardType}
+            allowFontScaling={false}
+            maxLength={maxLength}
+            returnKeyType={returnKeyType}
+            numberOfLines={numberOfLines ?? 1}
+            multiline={isMultiLine}
+            editable={editable}
+          />
+        </View>
+        <TouchableOpacity onPress={togglePassword} disabled={!isDisplayPass}>
+          <Icon
+            name={passwordIcon}
+            size={scaleFont(isFocused || borderHighlight ? 24 : 22)}
+            color={isFocused || borderHighlight ? colors.primary : colors.text}
+          />
+          {isMultiLine && (
+            <View style={styles.countView}>
+              <Text
+                allowFontScaling={false}
+                numberOfLines={1}
+                style={styles.countTextln}>
+                {value?.length}
+              </Text>
+              <View style={styles.divider} />
+              <Text
+                allowFontScaling={false}
+                numberOfLines={1}
+                style={styles.countText}>
+                {maxLength}
+              </Text>
+            </View>
+          )}
+        </TouchableOpacity>
       </TouchableOpacity>
-    </TouchableOpacity>
+      {error && (
+        <Text allowFontScaling={false} numberOfLines={2} style={styles.error}>
+          {error}
+        </Text>
+      )}
+    </View>
   );
 };
 
@@ -139,9 +148,12 @@ const getStyles = (
   borderHighlight: boolean,
 ) =>
   StyleSheet.create({
+    root: {
+      marginBottom: verticalScale(18),
+    },
+
     container: {
       backgroundColor: colors.card,
-      marginBottom: verticalScale(15),
       paddingHorizontal: horizontalScale(10),
       paddingVertical: verticalScale(10),
       paddingRight: verticalScale(20),
@@ -152,14 +164,17 @@ const getStyles = (
       borderWidth: isFocused || borderHighlight ? 1 : 0.3,
       borderColor: isFocused || borderHighlight ? colors.primary : '#686e75',
     },
+
     inputWrapper: {
       flex: 1,
     },
+
     label: {
       fontSize: scaleFont(14),
       fontFamily: font.openSansLight,
       color: colors.text,
     },
+
     textInput: {
       marginTop: verticalScale(2),
       fontSize: scaleFont(16),
@@ -191,6 +206,14 @@ const getStyles = (
       height: isFocused ? 2 : 1,
       backgroundColor: isFocused ? colors.primary : colors.text,
       marginVertical: 1,
+    },
+
+    error: {
+      marginTop: verticalScale(4),
+      fontSize: scaleFont(14),
+      fontFamily: font.openSansRegular,
+      color: 'red',
+      textTransform: 'none',
     },
   });
 

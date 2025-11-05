@@ -71,64 +71,70 @@ const Signup: FC = () => {
           label="Full name"
           rightIcon="person"
           placeholder="Dr. Cameron"
-          value={name}
-          onChangeText={text => setName(text)}
+          value={name.value}
+          onChangeText={text => setName({value: text})}
           keyboardType="default"
           maxLength={20}
+          error={name.error}
         />
         <CustomTextInput
           label="Email address"
           rightIcon="mail"
           placeholder="cameron@yopmail.com"
-          value={email}
-          onChangeText={text => setEmail(text)}
+          value={email.value}
+          onChangeText={text => setEmail({value: text})}
           keyboardType="email-address"
+          error={email.error}
         />
         <CustomTextInput
           label="Date of birth"
           rightIcon="calendar"
           placeholder="11 July 1998"
-          value={dateOfBirth}
-          onChangeText={text => setDateOfBirth(text)}
+          value={dateOfBirth.value}
+          onChangeText={text => setDateOfBirth({value: text})}
           keyboardType="default"
           maxLength={15}
           editable={false}
           isButton={true}
           onPress={datePickerHandler}
+          error={dateOfBirth.error}
         />
         <CustomTextInput
           label="Gender"
           rightIcon="transgender"
           placeholder="Male"
-          value={gender}
-          onChangeText={text => setGender(text)}
+          value={gender.value}
+          onChangeText={text => setGender({value: text})}
           keyboardType="default"
           maxLength={6}
           editable={false}
           isButton={true}
           onPress={genderPickerHandler}
+          error={gender.error}
         />
         <CustomTextInput
           label="Phone number"
           rightIcon="call"
           placeholder="+91 8702843752"
-          value={phoneNumber}
-          onChangeText={text => setPhoneNumber(text)}
+          value={phoneNumber.value}
+          onChangeText={text => setPhoneNumber({value: text})}
           keyboardType="phone-pad"
           maxLength={10}
           returnKeyType="done"
+          error={phoneNumber.error}
         />
         <CustomTextInput
           label="Address"
           rightIcon="location"
           placeholder="Fort Lauderdalefl, FL, USA"
-          value={address}
-          onChangeText={text => setAddress(text)}
+          value={address.value}
+          onChangeText={text => setAddress({value: text})}
           keyboardType="default"
           returnKeyType="go"
           maxLength={180}
           multiline={true}
           numberOfLines={5}
+          error={address.error}
         />
         <DatePicker
           date={new Date()}
@@ -136,7 +142,9 @@ const Signup: FC = () => {
           open={isDatePicker}
           mode="date"
           onConfirm={(res: Date) =>
-            setDateOfBirth(moment(res?.toString()).format('D MMM YYYY'))
+            setDateOfBirth({
+              value: moment(res?.toString()).format('D MMM YYYY'),
+            })
           }
           onCancel={datePickerHandler}
           theme={'light'}
@@ -145,13 +153,14 @@ const Signup: FC = () => {
           buttonColor={colors.primary}
           dividerColor={colors.primary}
           maximumDate={new Date()}
+          error={dateOfBirth.error}
         />
         <ListModal
           visible={isGenderPicker}
           options={['Male', 'Female']}
           onClose={() => genderPickerHandler()}
           onSelect={gen => {
-            setGender(gen);
+            setGender({value: gen});
             setIsGenderPicker(false);
           }}
         />
@@ -175,9 +184,9 @@ const Signup: FC = () => {
           <View style={styles.imagePreview}>
             {profileImage ? (
               <Image
-                source={{uri: profileImage}}
+                source={{uri: profileImage.value}}
                 style={styles.profileImage}
-                resizeMode="cover"
+                resizeMode="contain"
               />
             ) : (
               <CustomText
